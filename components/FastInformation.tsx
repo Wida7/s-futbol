@@ -25,7 +25,7 @@ function FastInformation() {
                                         Asistir suma más puntos
                                     </h3>
 
-                                    <p className="mt-1 text-sm leading-6 text-zinc-400">
+                                    <p className="mt-1 text-base leading-relaxed text-zinc-400">
                                         El torneo premia principalmente
                                         a quienes llegan a la cancha.
                                     </p>
@@ -47,7 +47,7 @@ function FastInformation() {
                                         Equipos sorteados por IA
                                     </h3>
 
-                                    <p className="mt-1 text-sm leading-6 text-zinc-400">
+                                    <p className="mt-1 text-base leading-relaxed text-zinc-400">
                                         Sorteados automáticamente para más diversión y equidad.
                                     </p>
                                 </div>
@@ -68,7 +68,7 @@ function FastInformation() {
                                         Todos pueden competir
                                     </h3>
 
-                                    <p className="mt-1 text-sm leading-6 text-zinc-400">
+                                    <p className="mt-1 text-base leading-relaxed text-zinc-400">
                                         No necesitas ser el mejor jugador, solo ser constante para garantizar buenas posiciones.
                                     </p>
                                 </div>
@@ -88,7 +88,7 @@ function FastInformation() {
                                         El cierre vale más
                                     </h3>
 
-                                    <p className="mt-1 text-sm leading-6 text-zinc-400">
+                                    <p className="mt-1 text-base leading-relaxed text-zinc-400">
                                         En las últimas fechas habrá más puntos en juego,
                                         así que nadie queda fuera de lugar antes de tiempo
                                         y todo puede cambiar hasta el final.
@@ -110,7 +110,7 @@ function FastInformation() {
                                         Premios finales
                                     </h3>
 
-                                    <p className="mt-1 text-sm leading-6 text-zinc-400">
+                                    <p className="mt-1 text-base leading-relaxed text-zinc-400">
                                         Las primeras posiciones ganan premios al final de la liga.
                                     </p>
                                 </div>
