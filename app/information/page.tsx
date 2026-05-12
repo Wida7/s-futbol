@@ -52,7 +52,7 @@ export default function InformationPage() {
                                 </h2>
                                 <div className="h-1.5 w-24 bg-green-500 rounded-full mx-auto md:mx-0 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
                                 <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto md:mx-0">
-                                    Así es como sumarás puntos a lo largo de las 5 fechas del torneo.
+                                    Así es como sumarás puntos a lo largo de las 5 fechas.
                                 </p>
                             </div>
 

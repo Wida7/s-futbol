@@ -90,8 +90,7 @@ function FastInformation() {
 
                                     <p className="mt-1 text-base leading-relaxed text-zinc-400">
                                         En las últimas fechas habrá más puntos en juego,
-                                        así que nadie queda fuera de lugar antes de tiempo
-                                        y todo puede cambiar hasta el final.
+                                        así que nadie queda fuera de lugar y todo puede cambiar hasta el pitido final.
                                     </p>
                                 </div>
                             </div>
@@ -111,7 +110,7 @@ function FastInformation() {
                                     </h3>
 
                                     <p className="mt-1 text-base leading-relaxed text-zinc-400">
-                                        Las primeras posiciones ganan premios al final de la liga.
+                                        Las 3 primeras posiciones ganan premios al final de la liga.
                                     </p>
                                 </div>
                             </div>
