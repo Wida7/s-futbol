@@ -28,8 +28,9 @@ export default function Home() {
           {/* BADGES */}
           <div className="mb-6 flex flex-wrap justify-center gap-3 lg:justify-start animate-[fade-in-down_0.6s_ease-out_both]">
 
-            <div className="flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-2 text-xs font-semibold tracking-wide text-green-400 sm:text-sm">
-
+            <div className="relative overflow-hidden flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-2 text-xs font-semibold tracking-wide text-green-400 sm:text-sm">
+              {/* Animación */}
+              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/5 to-transparent animate-[shine_4s_ease-in-out_infinite]" />
               <span className="inline-block animate-[spin_2s_linear_infinite] text-2xl">
                 ⚽
               </span>
@@ -37,7 +38,9 @@ export default function Home() {
               LIGA AMISTOSA • 5 FECHAS
             </div>
 
-            <div className="rounded-full border border-yellow-500/20 bg-yellow-500/10 px-4 py-2 text-xs font-semibold tracking-wide text-yellow-400 sm:text-sm content-center">
+            <div className="relative overflow-hidden rounded-full border border-yellow-500/20 bg-yellow-500/10 px-4 py-2 text-xs font-semibold tracking-wide text-yellow-400 sm:text-sm content-center">
+              {/* Animación */}
+              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/5 to-transparent animate-[shine_4s_ease-in-out_infinite]" />
               <span className="inline-block animate-bounce text-lg">
                 🏆
               </span>
