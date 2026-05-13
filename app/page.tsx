@@ -161,7 +161,8 @@ export default function Home() {
                   <ChevronRight size={20} />
                 </button>
 
-                <button className="h-14 rounded-2xl border border-zinc-700 bg-zinc-900 px-8 text-base font-semibold text-white transition hover:bg-zinc-800 cursor-pointer">
+                <button className="h-14 rounded-2xl border border-zinc-700 bg-zinc-900 px-8 text-base font-semibold text-white transition hover:bg-zinc-800 cursor-pointer"
+                  onClick={() => router.push("/score")}>
                   Ver Tabla
                 </button>
               </div>
