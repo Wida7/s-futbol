@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme";
+import { Navbar } from "@/components/thegridcn/Navbar";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -35,7 +36,8 @@ export default function RootLayout({
       }
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
-        <ThemeProvider defaultTheme="ares">
+        <ThemeProvider defaultTheme="poseidon">
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>

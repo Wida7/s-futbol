@@ -7,8 +7,8 @@ export default async function ScorePage() {
     const players = await playersRepository.getAll();
 
     return (
-        <div className="min-h-screen p-8 bg-gray-50 text-gray-900">
-            <h1 className="text-3xl font-bold mb-6 text-indigo-600">Tabla de posiciones</h1>
+        <div className="p-4 text-gray-900">
+            <h1 className="text-2xl font-bold mb-6 text-indigo-600">Tabla de posiciones</h1>
 
             <DataTableWithExportDemo />
         </div>

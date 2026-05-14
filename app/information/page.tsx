@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function InformationPage() {
     return (
-        <main className="min-h-screen bg-black text-white selection:bg-green-500/30">
+        <main className="bg-black text-white selection:bg-green-500/30">
             <section className="relative overflow-hidden pb-24">
                 {/* Glow */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,197,94,0.15),transparent_50%)]" />
