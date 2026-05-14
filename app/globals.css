@@ -3,6 +3,9 @@
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
+/* src/app/globals.css */
+@import "tailwindcss";
+@import "../components/thegridcn-theme.css";
 
 @theme inline {
   --color-background: var(--background);
@@ -49,11 +52,13 @@
 }
 
 @keyframes floatGlow {
+
   0%,
   100% {
     opacity: 0.7;
     transform: scale(1);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.15);
@@ -65,6 +70,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -76,6 +82,7 @@
     opacity: 0;
     transform: translateY(-20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -86,16 +93,21 @@
   0% {
     transform: translateX(-100%) skewX(-15deg);
   }
-  50%, 100% {
+
+  50%,
+  100% {
     transform: translateX(200%) skewX(-15deg);
   }
 }
 
 @keyframes gold-green-flash {
-  0%, 100% {
+
+  0%,
+  100% {
     color: #facc15;
     text-shadow: 0 0 15px rgba(250, 204, 21, 0.6);
   }
+
   50% {
     color: #4ade80;
     text-shadow: 0 0 15px rgba(74, 222, 128, 0.6);
@@ -105,6 +117,9 @@
 .animate-gold-green {
   animation: gold-green-flash 2s ease-in-out infinite;
 }
+
+@import "tailwindcss";
+@import "../components/thegridcn-theme.css";
 
 :root {
   --background: oklch(1 0 0);
@@ -179,9 +194,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
