@@ -40,13 +40,13 @@ export function HeroSection({
 			<div className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,0,0,0.03)_2px,rgba(0,0,0,0.03)_4px)]" />
 
 			{/* Radial glow from center-top */}
-			<div className="pointer-events-none absolute -top-1/4 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(var(--primary-rgb,0,180,255),0.06),transparent_70%)]" />
+			<div className="pointer-events-none absolute -top-1/4 left-1/2 h-150 w-200 -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(var(--primary-rgb,0,180,255),0.06),transparent_70%)]" />
 
 			{/* Animated horizontal scan line */}
-			<div
-				className="pointer-events-none absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
+			{/* <div
+				className="pointer-events-none absolute left-0 right-0 h-px bg-linear-to-r from-transparent via-primary/40 to-transparent"
 				style={{ animation: "heroScan 6s ease-in-out infinite" }}
-			/>
+			/> */}
 
 			{/* Animated top border glow */}
 			<div className="pointer-events-none absolute left-0 right-0 top-0 h-px">
@@ -86,9 +86,9 @@ export function HeroSection({
 				)}
 			>
 				{/* Badge */}
-				<div className="flex flex-wrap gap-2 justify-center gap-x-10 mx-2">
+				<div className="flex flex-wrap gap-2 justify-center gap-x-10 mx-2 md:mt-6">
 				<div className="relative overflow-hidden inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 shadow-[0_0_12px_rgba(var(--primary-rgb,0,180,255),0.1)]">
-					<div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/5 to-transparent animate-[shine_4s_ease-in-out_infinite]" />
+					<div className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/5 to-transparent animate-[shine_4s_ease-in-out_infinite]" />
 
 					<span className="font-mono text-xs uppercase tracking-widest text-primary flex items-center">
 						<span className="inline-block animate-[spin_2s_linear_infinite] text-xl mr-2">
@@ -139,7 +139,7 @@ export function HeroSection({
 						FÚTB
 					</span>
 					{/* BALL */}
-					<span className="relative mx-[-7px] flex items-center justify-center">
+					<span className="relative -mx-1.75 flex items-center justify-center">
 
 						{/* Glow */}
 						<span
@@ -200,21 +200,21 @@ export function HeroSection({
 
 			{/* Side accent lines (left) */}
 			<div className="pointer-events-none absolute bottom-8 left-0 top-8 flex flex-col justify-between">
-				<div className="h-16 w-px bg-gradient-to-b from-primary/40 to-transparent" />
-				<div className="h-16 w-px bg-gradient-to-t from-primary/40 to-transparent" />
+				<div className="h-16 w-px bg-linear-to-b from-primary/40 to-transparent" />
+				<div className="h-16 w-px bg-linear-to-t from-primary/40 to-transparent" />
 			</div>
 
 			{/* Side accent lines (right) */}
 			<div className="pointer-events-none absolute bottom-8 right-0 top-8 flex flex-col justify-between">
-				<div className="h-16 w-px bg-gradient-to-b from-primary/40 to-transparent" />
-				<div className="h-16 w-px bg-gradient-to-t from-primary/40 to-transparent" />
+				<div className="h-16 w-px bg-linear-to-b from-primary/40 to-transparent" />
+				<div className="h-16 w-px bg-linear-to-t from-primary/40 to-transparent" />
 			</div>
 
 			{/* Corner decorations */}
 			<div className="pointer-events-none absolute left-0 top-0 h-6 w-6 border-l-2 border-t-2 border-primary/40" />
 			<div className="pointer-events-none absolute right-0 top-0 h-6 w-6 border-r-2 border-t-2 border-primary/40" />
-			<div className="pointer-events-none absolute bottom-0 left-0 h-6 w-6 border-b-1 border-l-2 border-primary/40" />
-			<div className="pointer-events-none absolute bottom-0 right-0 h-6 w-6 border-b-1 border-r-2 border-primary/40" />
+			<div className="pointer-events-none absolute bottom-0 left-0 h-6 w-6 border-b border-l-2 border-primary/40" />
+			<div className="pointer-events-none absolute bottom-0 right-0 h-6 w-6 border-b border-r-2 border-primary/40" />
 		</div>
 	)
 }

@@ -20,11 +20,11 @@ export function AnomalyBanner({
     <div className={cn("relative w-full", className)} {...props}>
       {/* Top line with brackets */}
       <div className="flex items-center">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-amber-500/50" />
+        <div className="h-px flex-1 bg-linear-to-r from-transparent to-amber-500/50" />
         <span className="px-4 font-mono text-[10px] tracking-[0.5em] text-amber-500/70">
           [ ALERT ]
         </span>
-        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-500/50" />
+        <div className="h-px flex-1 bg-linear-to-l from-transparent to-amber-500/50" />
       </div>
 
       {/* Main content */}
@@ -32,7 +32,7 @@ export function AnomalyBanner({
         {/* Scan line effect */}
         {animated && (
           <div
-            className="absolute inset-0 bg-gradient-to-b from-amber-500/10 via-transparent to-transparent"
+            className="absolute inset-0 bg-linear-to-b from-amber-500/10 via-transparent to-transparent"
             style={{
               animation: "tron-anomaly-scan 2s linear infinite",
             }}
@@ -59,7 +59,7 @@ export function AnomalyBanner({
 
       {/* Bottom line */}
       <div className="flex items-center">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-amber-500/50" />
+        <div className="h-px flex-1 bg-linear-to-r from-transparent to-amber-500/50" />
         <div className="mx-4 flex gap-2">
           {[...Array(5)].map((_, i) => (
             <div
@@ -73,7 +73,7 @@ export function AnomalyBanner({
             />
           ))}
         </div>
-        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-amber-500/50" />
+        <div className="h-px flex-1 bg-linear-to-l from-transparent to-amber-500/50" />
       </div>
 
       <style jsx>{`
