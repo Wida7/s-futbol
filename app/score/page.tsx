@@ -1,4 +1,6 @@
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+export const runtime = 'nodejs';   // <‑‑ asegura que el código se ejecute en Node
 
 import { scoresRepository } from "@/backend/repositories/scoresRepository";
 import ScoreTable from "./ScoreTable";
@@ -9,7 +11,7 @@ export default async function ScorePage() {
 	try {
 		scores = await scoresRepository.getAll();
 	} catch (error) {
-		console.error("Error al obtener los puntajes:", error);
+		console.error("⚡️ Error al traer los scores:", error);
 		// Si falla, scores queda como array vacío [] para que la tabla no rompa la UI
 	}
 
