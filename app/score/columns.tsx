@@ -33,7 +33,8 @@ export const columns: ColumnDef<any>[] = [
 			}[posicion]
 
 			return (
-				<div className="flex justify-center">
+				<div className="flex justify-center transition-transform relative ">
+					<div className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/5 to-transparent animate-[shine_4s_ease-in-out_infinite_1s]" />
 					<Badge
 						variant="outline"
 						className={cn(
@@ -55,7 +56,7 @@ export const columns: ColumnDef<any>[] = [
     // Si está entre los 3 primeros, le damos font-black
     const isTop3 = posicion <= 3; 
     return (
-        <div className={cn('font-medium', isTop3 && 'font-bold tracking-wide animate-pulse')}>
+        <div className={cn('font-medium', isTop3 && 'font-bold tracking-wide animate-[pulse_2s_ease-in-out_infinite_1s]')}>
             {row.getValue('nombre')}
         </div>
     )
