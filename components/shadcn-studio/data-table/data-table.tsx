@@ -20,7 +20,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 
 import { cn } from '@/lib/utils'
 
-const data: Payment[] = [
+const data2: Payment[] = [
   {
     id: '1',
     name: 'Shang Chain',
@@ -132,8 +132,14 @@ export const columns: ColumnDef<Payment>[] = [
   }
 ]
 
-const DataTableWithExportDemo = () => {
-  const [sorting, setSorting] = useState<SortingState>([])
+interface DataTableProps<TData> {
+	data: TData[];
+	columns: ColumnDef<TData>[];
+  initialSorting?: SortingState;
+}
+
+const DataTable = <TData,>({ data, columns, initialSorting = [], }: DataTableProps<TData>) => {
+  const [sorting, setSorting] = useState<SortingState>(initialSorting)
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
   const [rowSelection, setRowSelection] = useState({})
@@ -167,7 +173,7 @@ const DataTableWithExportDemo = () => {
       <div className='flex justify-between gap-2 pb-4 max-sm:flex-col sm:items-center'>
         <div className='flex items-center space-x-2'>
           <Input
-            placeholder='Search all columns...'
+            placeholder='Buscar...'
             value={globalFilter ?? ''}
             onChange={event => setGlobalFilter(String(event.target.value))}
             className='max-w-sm'
@@ -213,4 +219,4 @@ const DataTableWithExportDemo = () => {
   )
 }
 
-export default DataTableWithExportDemo
+export default DataTable
