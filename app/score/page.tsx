@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { scoresRepository } from "@/backend/repositories/scoresRepository";
 import ScoreTable from "./ScoreTable";
 
