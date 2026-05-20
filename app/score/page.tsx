@@ -1,7 +1,3 @@
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
-export const runtime = 'nodejs';   // <‑‑ asegura que el código se ejecute en Node
-
 import { scoresRepository } from "@/backend/repositories/scoresRepository";
 import ScoreTable from "./ScoreTable";
 
