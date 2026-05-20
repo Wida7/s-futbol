@@ -3,50 +3,63 @@ import type { ColumnDef, ColumnFiltersState, SortingState, VisibilityState } fro
 import { Badge } from '@/components/ui/badge'
 
 export const columns: ColumnDef<any>[] = [
-{
-	accessorKey: 'posicion',
-	header: 'Posición',
-	enableSorting: true,
-	cell: ({ row }) => {
-		const posicion = Number(row.getValue('posicion'))
+	{
+		accessorKey: 'posicion',
+		header: () => <div className="text-center">#</div>,
+		enableSorting: true,
+		cell: ({ row }) => {
+			const posicion = Number(row.getValue('posicion'))
 
-		const styles = {
-			1: 'bg-yellow-500/15 text-yellow-400 border-yellow-500/30',
-			2: 'bg-slate-400/15 text-slate-300 border-slate-400/30',
-			3: 'bg-orange-600/15 text-orange-400 border-orange-600/30',
-		}[posicion]
+			const styles = {
+				1: 'bg-gradient-to-br from-yellow-400/20 to-yellow-600/10 text-yellow-300 border-yellow-400/40 shadow-[0_0_15px_rgba(250,204,21,0.35)] backdrop-blur-sm',
 
-		if (![1, 2, 3].includes(posicion)) {
+				2: 'bg-gradient-to-br from-slate-300/20 to-slate-500/10 text-slate-200 border-slate-300/40 shadow-[0_0_15px_rgba(203,213,225,0.25)] backdrop-blur-sm',
+
+				3: 'bg-gradient-to-br from-orange-400/20 to-amber-700/10 text-orange-300 border-orange-400/40 shadow-[0_0_15px_rgba(251,146,60,0.3)] backdrop-blur-sm',
+			}[posicion]
+
+			if (![1, 2, 3].includes(posicion)) {
+				return (
+					<div className="text-center font-semibold text-muted-foreground">
+						{posicion}
+					</div>
+				)
+			}
+
+			const medals = {
+				1: '🥇',
+				2: '🥈',
+				3: '🥉',
+			}[posicion]
+
 			return (
-				<div className="text-center font-semibold text-muted-foreground">
-					{posicion}
+				<div className="flex justify-center">
+					<Badge
+						variant="outline"
+						className={cn(
+							'border font-black px-2 py-0.5 transition-all duration-300 hover:scale-105 h-full',
+							styles
+						)}
+					>
+						{medals} {posicion}
+					</Badge>
 				</div>
 			)
-		}
-
-		const medals = {
-			1: '🥇',
-			2: '🥈',
-			3: '🥉',
-		}[posicion]
-
-		return (
-			<Badge
-				variant="outline"
-				className={cn(
-					'border font-bold px-2 py-0.5',
-					styles
-				)}
-			>
-				{medals} {posicion}
-			</Badge>
-		)
+		},
 	},
-},
 	{
 		accessorKey: 'nombre',
 		header: 'Nombres',
-		cell: ({ row }) => <div className='font-medium'>{row.getValue('nombre')}</div>
+		cell: ({ row }) => {
+    const posicion = Number(row.getValue('posicion'));
+    // Si está entre los 3 primeros, le damos font-black
+    const isTop3 = posicion <= 3; 
+    return (
+        <div className={cn('font-medium', isTop3 && 'font-bold tracking-wide animate-pulse')}>
+            {row.getValue('nombre')}
+        </div>
+    )
+}
 	},
 	{
 		accessorKey: 'puntos',

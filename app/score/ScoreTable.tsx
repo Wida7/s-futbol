@@ -14,7 +14,7 @@ export default function ScoreTable({ data }: Props) {
     initialSorting={[
       {
         id: 'posicion',
-        desc: true,
+        desc: false,
       },
     ]}
   />;
