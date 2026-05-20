@@ -8,6 +8,8 @@ export default async function ScorePage() {
 
 	try {
 		scores = await scoresRepository.getAll();
+		console.log(scores);
+		
 	} catch (error) {
 		console.error("⚡️ Error al traer los scores:", error);
 		// Si falla, scores queda como array vacío [] para que la tabla no rompa la UI

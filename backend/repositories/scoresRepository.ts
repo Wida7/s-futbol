@@ -31,13 +31,9 @@ export const scoresRepository = {
 					return {
 						nombre: item.nombre || '',
 						puntos: Number(item.puntos) || 0,
+						posicion: Number(item.posicion) || 0,
 					}
 				})
-				.sort((a, b) => b.puntos - a.puntos)
-				.map((player, index) => ({
-					...player,
-					posicion: index + 1,
-				}))
 
 			return data;
 		} catch (error) {
