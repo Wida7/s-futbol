@@ -11,21 +11,7 @@ import { HeroSection } from "@/components/thegridcn/hero-section"
  * ───────────────────────────────────────────── */
 
 export function LandingTemplate() {
-	const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
 
-	React.useEffect(() => {
-		async function validateScores() {
-			try {
-				const response = await fetch("/api/scores")
-				const data = await response.json()
-				console.log("scores response", data)
-			} catch (error) {
-				console.error("scores fetch error", error)
-			}
-		}
-
-		validateScores()
-	}, [])
 
 	return (
 		<div className="bg-background text-foreground md:mt-18">
