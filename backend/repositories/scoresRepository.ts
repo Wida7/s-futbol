@@ -11,7 +11,7 @@ export const scoresRepository = {
 		try {
 			const sheets = await getGoogleSheet();
 			const response = await sheets.spreadsheets.values.get({
-				spreadsheetId: process.env.GOOGLE_SHEET_ID,
+				spreadsheetId: process.env.ENV_GOOGLE_SHEET_ID,
 				range: "scores!A1:Z1000",
 			});
 
