@@ -4,7 +4,7 @@ import { JWT } from "google-auth-library";
 export async function getGoogleSheet() {
 	const auth = new JWT({
 		email: process.env.GOOGLE_CLIENT_EMAIL,
-		key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+		key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n").replace(/"/g, ""),
 		scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
 	});
 
