@@ -9,36 +9,36 @@ export function FieldBackground() {
 			{/* Textura cancha vertical */}
 			<div className="absolute inset-0 opacity-20">
 				{/* Contorno principal */}
-				<div className="absolute inset-x-6 top-6 bottom-6 border border-white/70 rounded-[24px]" />
+				<div className="absolute inset-x-6 top-6 bottom-6 border border-white!/70 rounded-[24px]" />
 
 				{/* Línea central horizontal */}
 				<div className="absolute left-1/2 top-1/2 h-px w-[85%] -translate-x-1/2 -translate-y-1/2 bg-white" />
 
 				{/* Círculo central */}
-				<div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white" />
+				<div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white!" />
 
 				{/* Área superior */}
-				<div className="absolute left-1/2 top-6 h-32 w-52 -translate-x-1/2 border border-white rounded-b-3xl" />
+				<div className="absolute left-1/2 top-6 h-32 w-52 -translate-x-1/2 border border-white! rounded-b-3xl" />
 
 				{/* Área pequeña superior */}
-				<div className="absolute left-1/2 top-6 h-16 w-28 -translate-x-1/2 border border-white rounded-b-2xl" />
+				<div className="absolute left-1/2 top-6 h-16 w-28 -translate-x-1/2 border border-white! rounded-b-2xl" />
 
 				{/* Punto penal superior */}
 				<div className="absolute left-1/2 top-24 h-2 w-2 -translate-x-1/2 rounded-full bg-white" />
 
 				{/* Área inferior */}
-				<div className="absolute bottom-6 left-1/2 h-32 w-52 -translate-x-1/2 border border-white rounded-t-3xl" />
+				<div className="absolute bottom-6 left-1/2 h-32 w-52 -translate-x-1/2 border border-white! rounded-t-3xl" />
 
 				{/* Área pequeña inferior */}
-				<div className="absolute bottom-6 left-1/2 h-16 w-28 -translate-x-1/2 border border-white rounded-t-2xl" />
+				<div className="absolute bottom-6 left-1/2 h-16 w-28 -translate-x-1/2 border border-white! rounded-t-2xl" />
 
 				{/* Punto penal inferior */}
 				<div className="absolute bottom-24 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-white" />
 
 				{/* Arcos */}
-				<div className="absolute left-1/2 top-3 h-4 w-20 -translate-x-1/2 border border-white rounded-b-xl" />
+				<div className="absolute left-1/2 top-3 h-4 w-20 -translate-x-1/2 border border-white! rounded-b-xl" />
 
-				<div className="absolute bottom-3 left-1/2 h-4 w-20 -translate-x-1/2 border border-white rounded-t-xl" />
+				<div className="absolute bottom-3 left-1/2 h-4 w-20 -translate-x-1/2 border border-white! rounded-t-xl" />
 			</div>
 
 			{/* Gradiente oscuro cinematográfico */}

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import { Trophy } from 'lucide-react'
 
 import { FieldBackground } from '@/components/draw/FieldBackground'
@@ -14,20 +14,20 @@ interface Player {
 }
 
 const players: Player[] = [
-	{ id: 1, nombre: 'David', equipo: 'blanco' },
-	{ id: 2, nombre: 'Walter', equipo: 'negro' },
-	{ id: 3, nombre: 'Camilo', equipo: 'blanco' },
-	{ id: 4, nombre: 'Keny', equipo: 'negro' },
-	{ id: 5, nombre: 'Colmenares', equipo: 'blanco' },
-	{ id: 6, nombre: 'Silva', equipo: 'negro' },
-	{ id: 7, nombre: 'Medina', equipo: 'blanco' },
-	{ id: 8, nombre: 'Cristian', equipo: 'negro' },
-	{ id: 9, nombre: 'Sebas', equipo: 'blanco' },
-	{ id: 10, nombre: 'Daniel', equipo: 'negro' },
-	{ id: 11, nombre: 'Andres', equipo: 'blanco' },
-	{ id: 12, nombre: 'Kevin', equipo: 'negro' },
-	{ id: 13, nombre: 'Juan', equipo: 'blanco' },
-	{ id: 14, nombre: 'Pipe', equipo: 'negro' },
+	{ id: 1, nombre: 'David Villarreal', equipo: 'blanco' },
+	{ id: 2, nombre: 'Walter Gomez', equipo: 'negro' },
+	{ id: 3, nombre: 'Camilo Camargo', equipo: 'blanco' },
+	{ id: 4, nombre: 'Keny Quemba', equipo: 'negro' },
+	{ id: 5, nombre: 'Brayan Colmenares', equipo: 'blanco' },
+	{ id: 6, nombre: 'David Silva', equipo: 'negro' },
+	{ id: 7, nombre: 'Jean Medina', equipo: 'blanco' },
+	{ id: 8, nombre: 'Juan Cristian', equipo: 'negro' },
+	{ id: 9, nombre: 'Sebas Find', equipo: 'blanco' },
+	{ id: 10, nombre: 'Daniel Alías', equipo: 'negro' },
+	{ id: 11, nombre: 'Andres Juancho', equipo: 'blanco' },
+	{ id: 12, nombre: 'Kevin FGeas (Tatto)', equipo: 'negro' },
+	{ id: 13, nombre: 'Juan Rey (Vice presiden)', equipo: 'blanco' },
+	{ id: 14, nombre: 'Pipe Bueno', equipo: 'negro' },
 ]
 
 export default function SorteoPage() {
@@ -50,46 +50,51 @@ export default function SorteoPage() {
 		const timeout = setTimeout(() => {
 			setRevealedPlayers(prev => [...prev, players[currentIndex]])
 			setCurrentIndex(prev => prev + 1)
-		}, 2200)
+		}, 2300)
 
 		return () => clearTimeout(timeout)
 	}, [currentIndex])
 
 	return (
-		<main className="relative min-h-dvh overflow-hidden bg-[#07140d] text-white">
+		<main
+			className="relative overflow-hidden bg-[#07140d] text-white"
+			style={{
+				height: 'calc(100dvh - 57px)',
+			}}
+		>
 			<FieldBackground />
 
-			<div className="relative z-10 mx-auto flex min-h-dvh max-w-md flex-col px-4 py-6">
+			<div className="relative z-10 flex h-full flex-col px-3 py-2">
 
 				{/* HEADER */}
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
-					className="mb-6 text-center"
+					className="shrink-0 text-center"
 				>
-					<div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 backdrop-blur-xl">
-						<Trophy className="h-4 w-4 text-yellow-400" />
+					<div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 backdrop-blur-xl">
+						<Trophy className="h-3 w-3 text-yellow-400" />
 
-						<span className="text-xs font-bold tracking-[0.35em] text-white/80">
+						<span className="text-[10px] font-bold tracking-[0.3em] text-white/80">
 							S-FÚTBOL
 						</span>
 					</div>
 
-					<h1 className="bg-gradient-to-b from-white to-white/40 bg-clip-text text-4xl font-black uppercase tracking-[0.18em] text-transparent">
-						Sorteo Oficial
+					<h1 className="mt-2 bg-gradient-to-b from-white to-white/40 bg-clip-text text-2xl font-black uppercase tracking-[0.15em] text-transparent">
+						Sorteo
 					</h1>
 				</motion.div>
 
 				{/* CONTENIDO */}
-				<div className="flex flex-1 flex-col justify-between">
+				<div className="flex flex-1 flex-col justify-between py-2">
 
 					{/* EQUIPO ARRIBA */}
-					<div className="pt-2">
-						<TeamFormation team={teamWhite} side="top" />
+					<div className="shrink-0">
+						<Formation team={teamWhite} side="top" />
 					</div>
 
 					{/* CARD CENTRAL */}
-					<div className="flex items-center justify-center py-10">
+					<div className="flex flex-1 items-center justify-center">
 
 						<AnimatePresence mode="wait">
 							{currentPlayer && (
@@ -97,9 +102,9 @@ export default function SorteoPage() {
 									key={currentPlayer.id}
 									initial={{
 										opacity: 0,
-										scale: 0.5,
+										scale: 0.45,
 										rotate: -15,
-										y: 80,
+										y: 70,
 									}}
 									animate={{
 										opacity: 1,
@@ -109,16 +114,12 @@ export default function SorteoPage() {
 									}}
 									exit={{
 										opacity: 0,
-										scale: 0.8,
+										scale: 0.75,
 
 										y:
 											currentPlayer.equipo === 'blanco'
-												? -280
-												: 280,
-
-										transition: {
-											duration: 0.9,
-										},
+												? -240
+												: 240,
 									}}
 									transition={{
 										duration: 0.7,
@@ -136,8 +137,8 @@ export default function SorteoPage() {
 					</div>
 
 					{/* EQUIPO ABAJO */}
-					<div className="pb-2">
-						<TeamFormation team={teamBlack} side="bottom" />
+					<div className="shrink-0">
+						<Formation team={teamBlack} side="bottom" />
 					</div>
 
 				</div>
@@ -146,15 +147,12 @@ export default function SorteoPage() {
 	)
 }
 
-interface TeamFormationProps {
+interface FormationProps {
 	team: Player[]
 	side: 'top' | 'bottom'
 }
 
-function TeamFormation({
-	team,
-	side,
-}: TeamFormationProps) {
+function Formation({ team, side }: FormationProps) {
 
 	const rows = [
 		team.slice(0, 3),
@@ -168,36 +166,34 @@ function TeamFormation({
 			: rows
 
 	return (
-		<div className="space-y-4">
+		<div className="space-y-2">
 
 			{orderedRows.map((row, rowIndex) => (
 				<div
 					key={rowIndex}
-					className="flex items-center justify-center gap-3"
+					className="flex items-center justify-center gap-2"
 				>
-					<AnimatePresence>
-						{row.map((player, index) => (
-							<motion.div
-								key={player.id}
-								initial={{
-									opacity: 0,
-									scale: 0.6,
-									y: side === 'top' ? -40 : 40,
-								}}
-								animate={{
-									opacity: 1,
-									scale: 1,
-									y: 0,
-								}}
-								transition={{
-									duration: 0.45,
-									delay: index * 0.05,
-								}}
-							>
-								<PlayerCard player={player} />
-							</motion.div>
-						))}
-					</AnimatePresence>
+					{row.map((player, index) => (
+						<motion.div
+							key={player.id}
+							initial={{
+								opacity: 0,
+								scale: 0.7,
+								y: side === 'top' ? -30 : 30,
+							}}
+							animate={{
+								opacity: 1,
+								scale: 1,
+								y: 0,
+							}}
+							transition={{
+								duration: 0.35,
+								delay: index * 0.04,
+							}}
+						>
+							<PlayerCard player={player} />
+						</motion.div>
+					))}
 				</div>
 			))}
 		</div>
