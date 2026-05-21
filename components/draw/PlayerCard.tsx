@@ -29,7 +29,7 @@ export function PlayerCard({
 
 				${featured
 					? 'w-full rounded-[28px] p-4 backdrop-blur-md!'
-					: 'w-[77px] sm:w-[150px] h-[100px] sm:h-[120px] rounded-2xl p-2'
+					: 'w-[77px] sm:w-[150px] h-[100px] sm:h-[135px] rounded-2xl p-2'
 				}
 
 				${isWhite

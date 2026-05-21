@@ -14,20 +14,20 @@ interface Player {
 }
 
 const players: Player[] = [
-	{ id: 1, nombre: 'David Villarreal', equipo: 'blanco' },
-	{ id: 2, nombre: 'Walter Gomez', equipo: 'negro' },
+	{ id: 1, nombre: 'Walter Gomez ⭐', equipo: 'blanco' },
+	{ id: 2, nombre: 'Jean Ramos ⭐', equipo: 'negro' },
 	{ id: 3, nombre: 'Camilo Camargo', equipo: 'blanco' },
-	{ id: 4, nombre: 'Keny Quemba', equipo: 'negro' },
-	{ id: 5, nombre: 'Brayan Colmenares', equipo: 'blanco' },
-	{ id: 6, nombre: 'David Silva', equipo: 'negro' },
-	{ id: 7, nombre: 'Jean Medina', equipo: 'blanco' },
-	{ id: 8, nombre: 'Juan Cristian', equipo: 'negro' },
-	{ id: 9, nombre: 'Sebas Find', equipo: 'blanco' },
-	{ id: 10, nombre: 'Daniel Alías', equipo: 'negro' },
-	{ id: 11, nombre: 'Andres Juancho', equipo: 'blanco' },
-	{ id: 12, nombre: 'Kevin FGeas (Tatto)', equipo: 'negro' },
-	{ id: 13, nombre: 'Juan Rey (Vice presiden)', equipo: 'blanco' },
-	{ id: 14, nombre: 'Pipe Bueno', equipo: 'negro' },
+	{ id: 4, nombre: 'David Ovalle ⭐', equipo: 'negro' },
+	{ id: 5, nombre: 'Fabio Garcia', equipo: 'blanco' },
+	{ id: 6, nombre: 'Leonardo Cabezas (Tatto)⭐', equipo: 'negro' },
+	{ id: 7, nombre: 'David Villarreal ⭐', equipo: 'blanco' },
+	{ id: 8, nombre: 'Sebastian Tique', equipo: 'blanco' },
+	{ id: 9, nombre: 'Keny Quemba', equipo: 'negro' },
+	{ id: 10, nombre: 'Miguel Sierra (Vikingo)⭐', equipo: 'negro' },
+	{ id: 11, nombre: 'Daniel', equipo: 'blanco' },
+	{ id: 12, nombre: 'Brayan Colmenares ⭐', equipo: 'negro' },
+	{ id: 13, nombre: 'Edwin Miranda ⭐', equipo: 'blanco' },
+	{ id: 14, nombre: 'Darío Rodríguez ⭐', equipo: 'negro' },
 ]
 
 export default function SorteoPage() {
@@ -64,7 +64,7 @@ export default function SorteoPage() {
 		>
 			<FieldBackground />
 
-			<div className="relative z-10 flex h-full flex-col px-3 py-2">
+			<div className="relative z-10 flex h-full flex-col px-3 pt-1">
 
 				{/* HEADER */}
 				<motion.div
@@ -89,7 +89,7 @@ export default function SorteoPage() {
 				<div className="flex flex-1 flex-col justify-between py-2">
 
 					{/* EQUIPO ARRIBA */}
-					<div className="shrink-0 #bg-blue-600/15  h-[40%] content-center">
+					<div className="shrink-0 #bg-blue-600/15  h-[40%]">
 						<Formation team={teamWhite} side="top" />
 					</div>
 
@@ -137,7 +137,7 @@ export default function SorteoPage() {
 					</div>
 
 					{/* EQUIPO ABAJO */}
-					<div className="shrink-0 h-[45%] #bg-red-600/15 content-center">
+					<div className="shrink-0 h-[45%] #bg-red-600/15 content-center mb-5 sm:mb-1">
 						<Formation team={teamBlack} side="bottom" />
 					</div>
 
@@ -166,12 +166,12 @@ function Formation({ team, side }: FormationProps) {
 			: rows
 
 	return (
-		<div className="space-y-2 #bg-amber-400/25">
+		<div className="space-y-4 sm:space-y-8 #bg-amber-400/25  ">
 
 			{orderedRows.map((row, rowIndex) => (
 				<div
 					key={rowIndex}
-					className="flex items-center justify-center gap-2 "
+					className="flex items-center justify-center gap-2"
 				>
 					{row.map((player, index) => (
 						<motion.div
