@@ -24,8 +24,8 @@ const players: Player[] = [
 	{ id: 8, nombre: 'Julián Díaz', equipo: 'blanco' },
 	{ id: 9, nombre: 'Keny Quemba', equipo: 'negro' },
 	{ id: 10, nombre: 'Miguel Sierra (Vikingo)⭐', equipo: 'negro' },
-	{ id: 11, nombre: 'Daniel Saavedra', equipo: 'blanco' },
-	{ id: 12, nombre: 'Brayan Colmenares ⭐', equipo: 'negro' },
+	{ id: 11, nombre: 'Daniel Saavedra ⭐', equipo: 'blanco' },
+	{ id: 12, nombre: 'Alejo Colmenares ⭐', equipo: 'negro' },
 	{ id: 13, nombre: 'Edwin Miranda ⭐', equipo: 'blanco' },
 	{ id: 14, nombre: 'Darío Rodríguez ⭐', equipo: 'negro' },
 ]
