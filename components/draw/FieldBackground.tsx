@@ -9,10 +9,13 @@ export function FieldBackground() {
 			{/* Textura cancha vertical */}
 			<div className="absolute inset-0 opacity-20">
 				{/* Contorno principal */}
-				<div className="absolute inset-x-6 top-6 bottom-6 border border-white!/70 rounded-[24px]" />
+				<div className="absolute inset-x-6 top-6 bottom-6 border border-white/70! rounded-[7px]" />
 
 				{/* Línea central horizontal */}
-				<div className="absolute left-1/2 top-1/2 h-px w-[85%] -translate-x-1/2 -translate-y-1/2 bg-white" />
+				<div className="absolute left-1/2 top-1/2 h-px w-[85%] -translate-x-1/2 -translate-y-1/2 bg-white">
+					{/* Punto central */}
+					<div className="absolute left-1/2 top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
+				</div>
 
 				{/* Círculo central */}
 				<div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white!" />

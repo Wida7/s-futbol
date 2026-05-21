@@ -25,16 +25,16 @@ export function PlayerCard({
 		<motion.div
 			whileHover={{ scale: 1.03 }}
 			className={`
-				relative overflow-hidden border backdrop-blur-2xl
+				relative overflow-hidden border backdrop-blur-2xl gap-4 
 
 				${featured
-					? 'w-[220px] rounded-[28px] p-4'
-					: 'w-[92px] rounded-2xl p-2'
+					? 'w-full rounded-[28px] p-4 backdrop-blur-md!'
+					: 'w-[77px] sm:w-[150px] h-[100px] sm:h-[120px] rounded-2xl p-2'
 				}
 
 				${isWhite
-					? 'border-white/30 bg-white/10 shadow-[0_0_25px_rgba(255,255,255,0.15)]'
-					: 'border-zinc-700 bg-black/70 shadow-[0_0_25px_rgba(0,0,0,0.8)]'
+					? 'border-white/30! bg-white/10 shadow-[0_0_25px_rgba(255,255,255,0.15)]'
+					: 'border-zinc-700! bg-black/70 shadow-[0_0_25px_rgba(0,0,0,0.8)]'
 				}
 			`}
 		>
@@ -50,7 +50,7 @@ export function PlayerCard({
 
 					${featured
 						? 'gap-4'
-						: 'flex-col gap-2'
+						: 'flex-col gap-0.5'
 					}
 				`}
 			>
@@ -66,8 +66,8 @@ export function PlayerCard({
 						}
 
 						${isWhite
-							? 'border-white/40 bg-white text-black'
-							: 'border-zinc-700 bg-black text-white'
+							? 'border-white/40! bg-white text-black'
+							: 'border-zinc-700! bg-black text-white'
 						}
 					`}
 				>
@@ -88,7 +88,7 @@ export function PlayerCard({
 
 							${featured
 								? 'text-lg'
-								: 'text-[10px]'
+								: 'text-[10px] sm:text-[17px] whitespace-normal wrap-break-word max-w-min'
 							}
 						`}
 					>

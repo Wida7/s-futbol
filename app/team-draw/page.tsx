@@ -57,7 +57,7 @@ export default function SorteoPage() {
 
 	return (
 		<main
-			className="relative overflow-hidden bg-[#07140d] text-white"
+			className="relative overflow-hidden bg-[#0b1c13] sm:bg-[#07140d] text-white"
 			style={{
 				height: 'calc(100dvh - 57px)',
 			}}
@@ -72,15 +72,15 @@ export default function SorteoPage() {
 					animate={{ opacity: 1, y: 0 }}
 					className="shrink-0 text-center"
 				>
-					<div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 backdrop-blur-xl">
+					{/* 					<div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 backdrop-blur-xl">
 						<Trophy className="h-3 w-3 text-yellow-400" />
 
 						<span className="text-[10px] font-bold tracking-[0.3em] text-white/80">
 							S-FÚTBOL
 						</span>
-					</div>
+					</div> */}
 
-					<h1 className="mt-2 bg-gradient-to-b from-white to-white/40 bg-clip-text text-2xl font-black uppercase tracking-[0.15em] text-transparent">
+					<h1 className="bg-linear-to-b from-white to-white/40 bg-clip-text text-2xl font-black uppercase tracking-[0.15em] text-transparent">
 						Sorteo
 					</h1>
 				</motion.div>
@@ -89,7 +89,7 @@ export default function SorteoPage() {
 				<div className="flex flex-1 flex-col justify-between py-2">
 
 					{/* EQUIPO ARRIBA */}
-					<div className="shrink-0">
+					<div className="shrink-0 #bg-blue-600/15  h-[40%] content-center">
 						<Formation team={teamWhite} side="top" />
 					</div>
 
@@ -137,7 +137,7 @@ export default function SorteoPage() {
 					</div>
 
 					{/* EQUIPO ABAJO */}
-					<div className="shrink-0">
+					<div className="shrink-0 h-[45%] #bg-red-600/15 content-center">
 						<Formation team={teamBlack} side="bottom" />
 					</div>
 
@@ -156,8 +156,8 @@ function Formation({ team, side }: FormationProps) {
 
 	const rows = [
 		team.slice(0, 3),
-		team.slice(3, 6),
-		team.slice(6, 7),
+		team.slice(3, 7),
+		team.slice(8, 9),
 	]
 
 	const orderedRows =
@@ -166,12 +166,12 @@ function Formation({ team, side }: FormationProps) {
 			: rows
 
 	return (
-		<div className="space-y-2">
+		<div className="space-y-2 #bg-amber-400/25">
 
 			{orderedRows.map((row, rowIndex) => (
 				<div
 					key={rowIndex}
-					className="flex items-center justify-center gap-2"
+					className="flex items-center justify-center gap-2 "
 				>
 					{row.map((player, index) => (
 						<motion.div
