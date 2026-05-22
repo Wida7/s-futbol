@@ -243,7 +243,7 @@ export default function InformationPage() {
             <div className="flex justify-start h-1.5 w-24 bg-primary rounded-full mx-auto md:mx-0 shadow-[0_0_10px_rgba(255,255,255,0.6)]"></div>
 
             <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto md:mx-0">
-              Los 3 primeros puestos de la edición se llevarán premios en efectivo según su posición final. O en las últimas fechas se estaran posteando opciones de premios para que elijan los ganadores, entre premios en efectivo o premios físicos relacionados al fútbol. Si no escogen el dinero, podrán llevarse los premios alternativos representados con las imágenes uno, dos y tres.
+              Los 3 primeros puestos de la edición se llevarán premios. Podrán escoger si el efectivo o los premios representados en las imagenes.
             </p>
           </div>
 
