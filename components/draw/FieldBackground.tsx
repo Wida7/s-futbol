@@ -41,24 +41,37 @@ export function FieldBackground() {
 				{/* Arcos */}
 				<div className="absolute left-1/2 top-3 h-4 w-20 -translate-x-1/2 border border-white! rounded-b-xl" />
 
-				<div className="absolute bottom-3 left-1/2 h-4 w-20 -translate-x-1/2 border border-white! rounded-t-xl" />
+				{/* Arcos de corner */}
+				<div className="absolute left-6 top-6 h-5 w-5 rounded-br-full border-b border-r border-white!" />
+
+				<div className="absolute right-6 top-6 h-5 w-5 rounded-bl-full border-b border-l border-white!" />
+
+				<div className="absolute bottom-6 left-6 h-5 w-5 rounded-tr-full border-t border-r border-white!" />
+
+				<div className="absolute bottom-6 right-6 h-5 w-5 rounded-tl-full border-t border-l border-white!" />
+
+
 			</div>
 
 			{/* Gradiente oscuro cinematográfico */}
 			<div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.75),transparent_20%,transparent_80%,rgba(0,0,0,0.75))]" />
 
-			{/* Líneas de césped */}
-			{/* 			<div className="absolute inset-0 opacity-[0.04]">
-				{Array.from({ length: 18 }).map((_, i) => (
+			{/* Franjas de césped */}
+			<div className="absolute inset-0 overflow-hidden opacity-[0.08]">
+				{Array.from({ length: 10 }).map((_, i) => (
 					<div
 						key={i}
-						className="absolute left-0 right-0 h-[5%] bg-white"
+						className={`absolute left-0 right-0 ${i % 2 === 0
+							? 'bg-white/15'
+							: 'bg-black/30'
+							}`}
 						style={{
-							top: `${i * 6}%`
+							top: `${i * 10}%`,
+							height: '10%',
 						}}
 					/>
 				))}
-			</div> */}
+			</div>
 		</>
 	)
 }

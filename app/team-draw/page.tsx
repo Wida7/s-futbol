@@ -62,17 +62,19 @@ export default function SorteoPage() {
 				height: 'calc(100dvh - 57px)',
 			}}
 		>
-			<FieldBackground />
+			{/* CONTENEDOR LIMITADO */}
+			<div className="sm:relative sm:mx-auto sm:h-full sm:w-full sm:max-w-3xl">
+				<FieldBackground />
 
-			<div className="relative z-10 flex h-full flex-col px-3 pt-1">
+				<div className="relative z-10 flex h-full flex-col px-3 pt-1">
 
-				{/* HEADER */}
-				<motion.div
-					initial={{ opacity: 0, y: -20 }}
-					animate={{ opacity: 1, y: 0 }}
-					className="shrink-0 text-center"
-				>
-					{/* 					<div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 backdrop-blur-xl">
+					{/* HEADER */}
+					<motion.div
+						initial={{ opacity: 0, y: -20 }}
+						animate={{ opacity: 1, y: 0 }}
+						className="shrink-0 text-center"
+					>
+						{/* 					<div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 backdrop-blur-xl">
 						<Trophy className="h-3 w-3 text-yellow-400" />
 
 						<span className="text-[10px] font-bold tracking-[0.3em] text-white/80">
@@ -80,67 +82,68 @@ export default function SorteoPage() {
 						</span>
 					</div> */}
 
-					<h1 className="bg-linear-to-b from-white to-white/40 bg-clip-text text-2xl font-black uppercase tracking-[0.15em] text-transparent">
-						Sorteo
-					</h1>
-				</motion.div>
+						<h1 className="bg-linear-to-b from-white to-white/40 bg-clip-text text-2xl font-black uppercase tracking-[0.15em] text-transparent">
+							Sorteo
+						</h1>
+					</motion.div>
 
-				{/* CONTENIDO */}
-				<div className="flex flex-1 flex-col justify-between py-2">
+					{/* CONTENIDO */}
+					<div className="flex flex-1 flex-col justify-between py-2">
 
-					{/* EQUIPO ARRIBA */}
-					<div className="shrink-0 #bg-blue-600/15  h-[40%]">
-						<Formation team={teamWhite} side="top" />
+						{/* EQUIPO ARRIBA */}
+						<div className="shrink-0 #bg-blue-600/15  h-[40%]">
+							<Formation team={teamWhite} side="top" />
+						</div>
+
+						{/* CARD CENTRAL */}
+						<div className="flex flex-1 items-center justify-center">
+
+							<AnimatePresence mode="wait">
+								{currentPlayer && (
+									<motion.div
+										key={currentPlayer.id}
+										initial={{
+											opacity: 0,
+											scale: 0.45,
+											rotate: -15,
+											y: 70,
+										}}
+										animate={{
+											opacity: 1,
+											scale: 1,
+											rotate: 0,
+											y: 0,
+										}}
+										exit={{
+											opacity: 0,
+											scale: 0.75,
+
+											y:
+												currentPlayer.equipo === 'blanco'
+													? -240
+													: 240,
+										}}
+										transition={{
+											duration: 0.7,
+											type: 'spring',
+										}}
+									>
+										<PlayerCard
+											player={currentPlayer}
+											featured
+										/>
+									</motion.div>
+								)}
+							</AnimatePresence>
+
+						</div>
+
+						{/* EQUIPO ABAJO */}
+						<div className="shrink-0 h-[45%] #bg-red-600/15 content-center mb-5 sm:mb-1">
+							<Formation team={teamBlack} side="bottom" />
+						</div>
+
 					</div>
-
-					{/* CARD CENTRAL */}
-					<div className="flex flex-1 items-center justify-center">
-
-						<AnimatePresence mode="wait">
-							{currentPlayer && (
-								<motion.div
-									key={currentPlayer.id}
-									initial={{
-										opacity: 0,
-										scale: 0.45,
-										rotate: -15,
-										y: 70,
-									}}
-									animate={{
-										opacity: 1,
-										scale: 1,
-										rotate: 0,
-										y: 0,
-									}}
-									exit={{
-										opacity: 0,
-										scale: 0.75,
-
-										y:
-											currentPlayer.equipo === 'blanco'
-												? -240
-												: 240,
-									}}
-									transition={{
-										duration: 0.7,
-										type: 'spring',
-									}}
-								>
-									<PlayerCard
-										player={currentPlayer}
-										featured
-									/>
-								</motion.div>
-							)}
-						</AnimatePresence>
-
-					</div>
-
-					{/* EQUIPO ABAJO */}
-					<div className="shrink-0 h-[45%] #bg-red-600/15 content-center mb-5 sm:mb-1">
-						<Formation team={teamBlack} side="bottom" />
-					</div>
-
 				</div>
 			</div>
 		</main>
