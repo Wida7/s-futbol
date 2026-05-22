@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react'
+import Image from 'next/image'
 import { cn } from "@/lib/utils"
 import FastInformation from '@/components/FastInformation'
 import { AlertCircle, CalendarCheck, CheckCircle2, Equal, Gift, Star, Trophy, Users } from 'lucide-react'
@@ -242,7 +243,7 @@ export default function InformationPage() {
             <div className="flex justify-start h-1.5 w-24 bg-primary rounded-full mx-auto md:mx-0 shadow-[0_0_10px_rgba(255,255,255,0.6)]"></div>
 
             <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto md:mx-0">
-              Los 3 primeros puestos de la edición se llevarán premios en efectivo según su posición final. O en las últimas fechas se estaran posteando opciones de premios para que elijan los ganadores, entre premios en efectivo o premios físicos relacionados al fútbol.
+              Los 3 primeros puestos de la edición se llevarán premios en efectivo según su posición final. O en las últimas fechas se estaran posteando opciones de premios para que elijan los ganadores, entre premios en efectivo o premios físicos relacionados al fútbol. Si no escogen el dinero, podrán llevarse los premios alternativos representados con las imágenes uno, dos y tres.
             </p>
           </div>
 
@@ -262,6 +263,9 @@ export default function InformationPage() {
 
                 <div className="text-2xl sm:text-3xl font-black text-zinc-100">
                   $70K
+                </div> ó
+                <div className="mt-3">
+                  <Image src="/dos.png" alt="Premio alternativo 2do lugar" width={72} height={72} className="mx-auto rounded-2xl border border-zinc-700/40 bg-white/15" />
                 </div>
               </div>
 
@@ -299,6 +303,9 @@ export default function InformationPage() {
 
                 <div className="text-3xl sm:text-5xl font-black bg-linear-to-b from-yellow-200 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
                   $100K
+                </div> ó
+                <div className="mt-3">
+                  <Image src="/uno.png" alt="Premio alternativo campeón" width={84} height={84} className="mx-auto rounded-2xl border border-yellow-400/30 bg-yellow-950/20" />
                 </div>
               </div>
 
@@ -331,6 +338,9 @@ export default function InformationPage() {
 
                 <div className="text-2xl sm:text-3xl font-black text-amber-400">
                   $50K
+                </div> ó
+                <div className="mt-3">
+                  <Image src="/tres.png" alt="Premio alternativo 3er lugar" width={64} height={64} className="mx-auto rounded-2xl border border-amber-500/30 bg-amber-950/20" />
                 </div>
               </div>
 
@@ -348,6 +358,10 @@ export default function InformationPage() {
               </div>
             </div>
           </div>
+
+
+
+
 
         </div>
 
