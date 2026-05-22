@@ -242,7 +242,7 @@ export default function InformationPage() {
             <div className="flex justify-start h-1.5 w-24 bg-primary rounded-full mx-auto md:mx-0 shadow-[0_0_10px_rgba(255,255,255,0.6)]"></div>
 
             <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto md:mx-0">
-              Los 3 primeros puestos de la edición se llevarán premios en efectivo según su posición final.
+              Los 3 primeros puestos de la edición se llevarán premios en efectivo según su posición final. O en las últimas fechas se estaran posteando opciones de premios para que elijan los ganadores, entre premios en efectivo o premios físicos relacionados al fútbol.
             </p>
           </div>
 
@@ -261,7 +261,7 @@ export default function InformationPage() {
                 </p>
 
                 <div className="text-2xl sm:text-3xl font-black text-zinc-100">
-                  $40K
+                  $70K
                 </div>
               </div>
 
@@ -298,7 +298,7 @@ export default function InformationPage() {
                 </p>
 
                 <div className="text-3xl sm:text-5xl font-black bg-linear-to-b from-yellow-200 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
-                  $70.000
+                  $100K
                 </div>
               </div>
 
@@ -330,7 +330,7 @@ export default function InformationPage() {
                 </p>
 
                 <div className="text-2xl sm:text-3xl font-black text-amber-400">
-                  $30K
+                  $50K
                 </div>
               </div>
 
