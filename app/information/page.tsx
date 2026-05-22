@@ -245,6 +245,21 @@ export default function InformationPage() {
             <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto md:mx-0">
               Los 3 primeros puestos de la edición se llevarán premios. Podrán escoger si el efectivo o los premios representados en las imagenes.
             </p>
+
+            <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto md:mx-0">
+              <RoughNotation
+              type="underline"
+              show={show}
+              color="red"
+              animationDuration={3000}
+              iterations={3}
+            >
+              <span className=''>
+              Las imagenes son de referencia
+              </span></RoughNotation>
+              , pueden variar según disponinibilidad, al acercarse la última fecha se anunciarán los premios específicos de esta edición
+            </p>
+            
           </div>
 
           {/* Podio */}
