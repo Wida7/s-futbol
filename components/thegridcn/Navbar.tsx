@@ -8,6 +8,7 @@ import {
   Menu,
   X,
 } from "lucide-react"
+import Image from "next/image"
 
 /* ─────────────────────────────────────────────
  * Mock Data Constants
@@ -48,19 +49,22 @@ export function Navbar() {
             </span>
           </a>
 
+
+
           {/* Desktop nav links */}
           <div className="hidden items-center gap-6 md:flex">
             {LANDING_NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="font-mono text-[10px] uppercase tracking-widest text-foreground/50 transition-colors hover:text-primary"
+                className="font-mono text-[12px] uppercase tracking-widest text-foreground/50 transition-colors hover:text-primary"
               >
                 {link.label}
               </a>
             ))}
+            {/* 
             <a
-              /* href="#pricing" */
+              href="#pricing"
               onClick={() =>
                 addToast({
                   title: "No no no!",
@@ -72,21 +76,31 @@ export function Navbar() {
               className="rounded border border-primary bg-primary/20 px-4 py-1.5 font-mono text-[10px] uppercase tracking-widest text-primary shadow-[0_0_12px_rgba(var(--primary-rgb,0,180,255),0.15)] transition-all duration-300 hover:bg-primary/30"
             >
               Admin
-            </a>
+            </a> */}
           </div>
 
           {/* Mobile hamburger */}
-          <button
-            className="flex h-8 w-8 items-center justify-center rounded border border-primary/30 text-foreground/60 md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <X className="h-4 w-4" />
-            ) : (
-              <Menu className="h-4 w-4" />
-            )}
-          </button>
+          <div className="flex items-center gap-2">
+            <a
+              href="https://wa.me/573057724056?text=Hola,%20quiero%20recibir%20más%20información%20sobre%20S-Fútbol!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-end gap-2 rounded border border-emerald-500 bg-emerald-500/10 px-2 py-1.5 font-mono text-[10px] uppercase tracking-widest text-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all duration-300 hover:bg-emerald-500/20"
+            >
+              <Image src="/whatsapp.svg" alt="WhatsApp" width={18} height={18} />
+              <span className="hidden md:inline">WhatsApp</span>
+            </a>
+            <button
+              className="flex h-8 w-8 items-center justify-center rounded border border-primary/30 text-foreground/60 md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <X className="h-4 w-4" />
+              ) : (
+                <Menu className="h-4 w-4" />
+              )}
+            </button></div>
         </div>
 
         {/* Mobile menu */}
@@ -103,21 +117,22 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
+              {/*  
               <a
-                /* href="#pricing" */
+                href="#pricing"
                 onClick={() => {
-                addToast({
-                  title: "No no no!",
-                  description: "No tienes permisos 🚫",
-                  variant: "warning", // success | error | warning | info
-                  duration: 4000,     // opcional, tiempo en ms
-                })
+                  addToast({
+                    title: "Access Denied",
+                    description: "No tienes permisos 🚫",
+                    variant: "warning", // success | error | warning | info
+                    duration: 4000,     // opcional, tiempo en ms
+                  })
                   setMobileMenuOpen(false)
                 }}
                 className="mt-2 rounded border border-primary bg-primary/20 px-4 py-2 text-center font-mono text-[10px] uppercase tracking-widest text-primary"
               >
                 Admin
-              </a>
+              </a>*/}
             </div>
           </div>
         )}
