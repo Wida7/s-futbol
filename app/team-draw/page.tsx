@@ -13,6 +13,8 @@ interface Player {
 	equipo: 'blanco' | 'negro'
 }
 
+const tittle = "SORTEO - FECHA 1"
+
 const players: Player[] = [
 	{ id: 1, nombre: 'Walter Gomez ⭐', equipo: 'blanco' },
 	{ id: 2, nombre: 'Jean Ramos ⭐', equipo: 'negro' },
@@ -83,7 +85,7 @@ export default function SorteoPage() {
 					</div> */}
 
 						<h1 className="bg-linear-to-b from-white to-white/40 bg-clip-text text-2xl font-black uppercase tracking-[0.15em] text-transparent">
-							Sorteo
+							{tittle}
 						</h1>
 					</motion.div>
 
