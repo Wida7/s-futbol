@@ -22,7 +22,7 @@ const players: Player[] = [
 	{ id: 10, nombre: 'Darío Rodríguez ⭐', equipo: 'negro', puntos: 15 },
 	{ id: 11, nombre: 'Daniel Saavedra', equipo: 'blanco', puntos: 10 },
 	{ id: 5, nombre: 'Walter Gomez', equipo: 'negro', puntos: 21 },
-	{ id: 14, nombre: 'Mauricio Amaya⭐', equipo: 'blanco', puntos: 0 },
+	{ id: 14, nombre: 'Mauricio Amaya ⭐', equipo: 'blanco', puntos: 0 },
 	{ id: 13, nombre: 'David Ovalle ⭐', equipo: 'negro', puntos: 15 },
 	{ id: 12, nombre: 'Juan Martínez ⭐', equipo: 'blanco', puntos: 0 },
 	{ id: 15, nombre: 'Johan Mendoza', equipo: 'negro', puntos: 10 },
