@@ -10,26 +10,29 @@ import { PlayerCard } from '@/components/draw/PlayerCard'
 interface Player {
 	id: number
 	nombre: string
-	equipo: 'blanco' | 'negro'
+	equipo: 'blanco' | 'negro',
+	puntos: number
 }
 
-const tittle = "SORTEO - FECHA 1"
+const tittle = "SORTEO - FECHA 2"
 
 const players: Player[] = [
-	{ id: 1, nombre: 'Walter Gomez ⭐', equipo: 'blanco' },
-	{ id: 2, nombre: 'Jean Ramos ⭐', equipo: 'negro' },
-	{ id: 3, nombre: 'Camilo Camargo', equipo: 'blanco' },
-	{ id: 4, nombre: 'David Ovalle ⭐', equipo: 'negro' },
-	{ id: 5, nombre: 'Fabio Garcia', equipo: 'blanco' },
-	{ id: 6, nombre: 'Leonardo Cabezas (Tatto)⭐', equipo: 'negro' },
-	{ id: 7, nombre: 'David Villarreal ⭐', equipo: 'blanco' },
-	{ id: 8, nombre: 'Julián Díaz', equipo: 'blanco' },
-	{ id: 9, nombre: 'Keny Quemba', equipo: 'negro' },
-	{ id: 10, nombre: 'Miguel Sierra (Vikingo)⭐', equipo: 'negro' },
-	{ id: 11, nombre: 'Daniel Saavedra ⭐', equipo: 'blanco' },
-	{ id: 12, nombre: 'Alejo Colmenares ⭐', equipo: 'negro' },
-	{ id: 13, nombre: 'Edwin Miranda ⭐', equipo: 'blanco' },
-	{ id: 14, nombre: 'Darío Rodríguez ⭐', equipo: 'negro' },
+	{ id: 8, nombre: 'Julián Díaz', equipo: 'negro', puntos: 0 },
+	{ id: 1, nombre: 'Keny Quemba ⭐', equipo: 'blanco', puntos: 19 },
+	{ id: 10, nombre: 'Darío Rodríguez ⭐', equipo: 'negro', puntos: 15 },
+	{ id: 11, nombre: 'Daniel Saavedra', equipo: 'blanco', puntos: 10 },
+	{ id: 5, nombre: 'Walter Gomez', equipo: 'negro', puntos: 21 },
+	{ id: 14, nombre: 'Mauricio Amaya⭐', equipo: 'blanco', puntos: 0 },
+	{ id: 13, nombre: 'David Ovalle ⭐', equipo: 'negro', puntos: 15 },
+	{ id: 12, nombre: 'Juan Martínez ⭐', equipo: 'blanco', puntos: 0 },
+	{ id: 15, nombre: 'Johan Mendoza', equipo: 'negro', puntos: 10 },
+	{ id: 7, nombre: 'Mauricio Pulido (Marang)', equipo: 'blanco', puntos: 0 },
+	{ id: 2, nombre: 'Juanjo Forero', equipo: 'negro', puntos: 0 },
+	{ id: 3, nombre: 'Camilo Camargo ⭐', equipo: 'blanco', puntos: 10 },
+	{ id: 9, nombre: 'Edwin Miranda ⭐', equipo: 'negro', puntos: 12 },
+	{ id: 6, nombre: 'Jean Ramos ⭐', equipo: 'blanco', puntos: 15 },
+	{ id: 16, nombre: 'Camilo Rincon', equipo: 'negro', puntos: 0 },
+	{ id: 4, nombre: 'Alejo Colmenares ⭐', equipo: 'blanco', puntos: 17 },	
 ]
 
 export default function SorteoPage() {
@@ -65,7 +68,7 @@ export default function SorteoPage() {
 			}}
 		>
 			{/* CONTENEDOR LIMITADO */}
-			<div className="sm:relative sm:mx-auto sm:h-full sm:w-full sm:max-w-3xl">
+			<div className="relative mx-auto h-full w-full sm:max-w-3xl">
 				<FieldBackground />
 
 				<div className="relative z-10 flex h-full flex-col px-3 pt-1">
@@ -84,22 +87,21 @@ export default function SorteoPage() {
 						</span>
 					</div> */}
 
-						<h1 className="bg-linear-to-b from-white to-white/40 bg-clip-text text-2xl font-black uppercase tracking-[0.15em] text-transparent">
+						<h1 className="bg-linear-to-b from-white to-white/40 bg-clip-text text-xl sm:text-2xl font-black uppercase tracking-[0.15em] text-transparent">
 							{tittle}
 						</h1>
 					</motion.div>
 
 					{/* CONTENIDO */}
-					<div className="flex flex-1 flex-col justify-between py-2">
+					<div className="flex flex-1 flex-col justify-between pb-2">
 
 						{/* EQUIPO ARRIBA */}
-						<div className="shrink-0 #bg-blue-600/15  h-[40%]">
+						<div className="shrink-0 #bg-blue-600/15  h-[40%] mt-2 sm:mt-6 content-center">
 							<Formation team={teamWhite} side="top" />
 						</div>
 
 						{/* CARD CENTRAL */}
 						<div className="flex flex-1 items-center justify-center">
-
 							<AnimatePresence mode="wait">
 								{currentPlayer && (
 									<motion.div
@@ -141,7 +143,7 @@ export default function SorteoPage() {
 						</div>
 
 						{/* EQUIPO ABAJO */}
-						<div className="shrink-0 h-[45%] #bg-red-600/15 content-center mb-5 sm:mb-1">
+						<div className="shrink-0 h-[45%] #bg-red-600/15 content-center mb-6 sm:mb-6">
 							<Formation team={teamBlack} side="bottom" />
 						</div>
 
@@ -160,18 +162,18 @@ interface FormationProps {
 function Formation({ team, side }: FormationProps) {
 
 	const rows = [
-		team.slice(0, 3),
-		team.slice(3, 7),
-		team.slice(8, 9),
+		team.slice(0, 4),
+		team.slice(4, 8),
+		team.slice(8, 10),
 	]
 
 	const orderedRows =
-		side === 'top'
+		side === 'bottom'
 			? [...rows].reverse()
 			: rows
 
 	return (
-		<div className="space-y-4 sm:space-y-8 #bg-amber-400/25  ">
+		<div className="space-y-4 sm:space-y-7 #bg-amber-400/25  ">
 
 			{orderedRows.map((row, rowIndex) => (
 				<div

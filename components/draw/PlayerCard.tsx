@@ -7,6 +7,7 @@ interface Player {
 	id: number
 	nombre: string
 	equipo: 'blanco' | 'negro'
+	puntos: number
 }
 
 interface Props {
@@ -29,7 +30,7 @@ export function PlayerCard({
 
 				${featured
 					? 'w-full rounded-[28px] p-4 backdrop-blur-md!'
-					: 'w-[77px] sm:w-[150px] h-[100px] sm:h-[135px] rounded-2xl p-2'
+					: 'w-[77px] sm:w-[150px] h-[100px] sm:h-[145px] rounded-2xl p-2'
 				}
 
 				${isWhite
@@ -61,8 +62,8 @@ export function PlayerCard({
 						flex items-center justify-center border
 
 						${featured
-							? 'h-14 w-14 rounded-2xl'
-							: 'h-10 w-10 rounded-xl'
+							? 'h-14 w-14 sm:h-16 sm:w-16 rounded-2xl flex-col'
+							: 'h-10 w-10 sm:h-14 sm:w-14 rounded-xl flex-col'
 						}
 
 						${isWhite
@@ -73,10 +74,25 @@ export function PlayerCard({
 				>
 					<Shirt
 						className={featured
-							? 'h-7 w-7'
-							: 'h-5 w-5'
+							? 'h-8 w-8 sm:h-8 sm:w-8'
+							: 'h-5 w-5 sm:h-6 sm:w-6'
 						}
 					/>
+
+					{/* Puntos */}
+					<div className={`mt-0.5 text-[10px] font-bold leading-none  
+						${isWhite
+							? 'text-black sm:text-[12px]'
+							: ' text-white sm:text-[12px]'
+						}`}>
+
+						{featured
+						? `${player.puntos} puntos`
+						: `${player.puntos} pts`}
+
+
+						
+					</div>
 				</div>
 
 				{/* TEXTO */}
