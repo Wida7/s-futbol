@@ -161,7 +161,7 @@ export default function InformationPage() {
 
               {/* Puntos */}
               <div className="text-5xl font-black text-green-400 mb-4 drop-shadow-[0_0_10px_rgba(34,197,94,0.4)]">
-                +7 <span className="text-xl text-zinc-500 font-bold uppercase tracking-wider">pts</span>
+                +3 <span className="text-xl text-zinc-500 font-bold uppercase tracking-wider">pts</span>
               </div>
 
               {/* Descripción */}

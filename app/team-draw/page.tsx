@@ -14,25 +14,41 @@ interface Player {
 	puntos: number
 }
 
-const tittle = "SORTEO - FECHA 2"
+const tittle = "SORTEO - FECHA 3"
 
 const players: Player[] = [
-	{ id: 8, nombre: 'Julián Díaz', equipo: 'negro', puntos: 0 },
-	{ id: 1, nombre: 'Keny Quemba ⭐', equipo: 'blanco', puntos: 19 },
-	{ id: 10, nombre: 'Darío Rodríguez ⭐', equipo: 'negro', puntos: 15 },
-	{ id: 11, nombre: 'Daniel Saavedra', equipo: 'blanco', puntos: 10 },
-	{ id: 5, nombre: 'Walter Gomez', equipo: 'negro', puntos: 21 },
-	{ id: 14, nombre: 'Mauricio Amaya ⭐', equipo: 'blanco', puntos: 0 },
-	{ id: 13, nombre: 'David Ovalle ⭐', equipo: 'negro', puntos: 15 },
-	{ id: 12, nombre: 'Juan Martínez ⭐', equipo: 'blanco', puntos: 0 },
-	{ id: 15, nombre: 'Johan Mendoza', equipo: 'negro', puntos: 10 },
-	{ id: 7, nombre: 'Mauricio Pulido (Marang)', equipo: 'blanco', puntos: 0 },
-	{ id: 2, nombre: 'Juanjo Forero', equipo: 'negro', puntos: 0 },
-	{ id: 3, nombre: 'Camilo Camargo ⭐', equipo: 'blanco', puntos: 10 },
-	{ id: 9, nombre: 'Edwin Miranda ⭐', equipo: 'negro', puntos: 12 },
-	{ id: 6, nombre: 'Jean Ramos ⭐', equipo: 'blanco', puntos: 15 },
-	{ id: 16, nombre: 'Camilo Rincon', equipo: 'negro', puntos: 0 },
-	{ id: 4, nombre: 'Alejo Colmenares ⭐', equipo: 'blanco', puntos: 17 },	
+	{ id: 1, 
+		nombre: 'Cristian Miranda', equipo: 'negro', puntos: 10 },
+	{ id: 2,
+		nombre: 'Jean Ramos ⭐', equipo: 'blanco', puntos: 27 },
+	{ id: 3, 
+		nombre: 'Luis', equipo: 'negro', puntos: 0 },
+	{ id: 4,
+		nombre: 'Edwin Miranda', equipo: 'blanco', puntos: 27 }, 
+	{ id: 5, 
+		nombre: 'Alejo Colmenares ⭐', equipo: 'negro', puntos: 27 },
+	{ id: 6, 
+		nombre: 'David Villarreal 🩼🦶🏥', equipo: 'blanco', puntos: 14 },
+	{ id: 7, 
+		nombre: 'Walter Gomez ⭐', equipo: 'negro', puntos: 40 },
+	{ id: 8, 
+		nombre: 'Samuel Solarte ⭐', equipo: 'blanco', puntos: 0 },
+	{ id: 9, 
+		nombre: 'Darío Rodríguez', equipo: 'negro', puntos: 30 },
+	{ id: 11, 
+		nombre: 'Mauricio Pulido', equipo: 'blanco', puntos: 10 },
+	{ id: 10, 
+		nombre: 'Keny Quemba ⭐', equipo: 'negro', puntos: 31 },
+	{ id: 12, 
+		nombre: 'Daniel Saavedra ⭐', equipo: 'blanco', puntos: 20 },
+	{ id: 13, 
+		nombre: 'Juan Zambrano', equipo: 'negro', puntos: 0 },
+	{ id: 14, 
+		nombre: 'Camilo Rincon', equipo: 'blanco', puntos: 10 },
+	{ id: 15, 
+		nombre: 'Deison Cagua ⭐', equipo: 'negro', puntos: 0 },
+	{ id: 16, 
+		nombre: 'Alexander', equipo: 'blanco', puntos: 0 },
 ]
 
 export default function SorteoPage() {
