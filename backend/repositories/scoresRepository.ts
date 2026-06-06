@@ -4,6 +4,7 @@ export interface Score {
 	posicion: number
 	nombre: string
 	puntos: number
+	fechaAnterior?: number
 }
 
 export const scoresRepository = {
@@ -32,6 +33,7 @@ export const scoresRepository = {
 						nombre: item.nombre || '',
 						puntos: Number(item.puntos) || 0,
 						posicion: Number(item.posicion) || 0,
+						fechaAnterior: Number(item.fechaAnterior) || 0,
 					}
 				})
 

@@ -34,7 +34,7 @@ const players: Player[] = [
 	{ id: 8, 
 		nombre: 'Samuel Solarte ⭐', equipo: 'blanco', puntos: 0 },
 	{ id: 9, 
-		nombre: 'Darío Rodríguez', equipo: 'negro', puntos: 30 },
+		nombre: 'Darío Rodríguez ⭐', equipo: 'negro', puntos: 30 },
 	{ id: 11, 
 		nombre: 'Mauricio Pulido', equipo: 'blanco', puntos: 10 },
 	{ id: 10, 

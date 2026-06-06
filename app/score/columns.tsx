@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils'
 import type { ColumnDef, ColumnFiltersState, SortingState, VisibilityState } from '@tanstack/react-table'
 import { Badge } from '@/components/ui/badge'
+import { ChevronUp, ChevronDown } from 'lucide-react'
 
 export const columns: ColumnDef<any>[] = [
 	{
@@ -9,6 +10,15 @@ export const columns: ColumnDef<any>[] = [
 		enableSorting: true,
 		cell: ({ row }) => {
 			const posicion = Number(row.getValue('posicion'))
+			const posicionAnterior = Number(row.original.fechaAnterior
+			)
+			//console.log('Row data:', row.original)
+			//console.log('Posición actual:', posicion, 'Posición anterior:', posicionAnterior)
+			const diferencia = posicionAnterior - posicion
+			// positiva = subió
+			// negativa = bajó
+
+
 
 			const styles = {
 				1: 'bg-gradient-to-br from-yellow-400/20 to-yellow-600/10 text-yellow-300 border-yellow-400/40 shadow-[0_0_15px_rgba(250,204,21,0.35)] backdrop-blur-sm',
@@ -20,8 +30,11 @@ export const columns: ColumnDef<any>[] = [
 
 			if (![1, 2, 3].includes(posicion)) {
 				return (
-					<div className="text-center font-semibold text-muted-foreground">
-						{posicion}
+					<div className="flex items-center justify-center gap-1">
+						<span className="font-semibold text-muted-foreground">
+							{posicion}
+						</span>
+
 					</div>
 				)
 			}
@@ -52,15 +65,40 @@ export const columns: ColumnDef<any>[] = [
 		accessorKey: 'nombre',
 		header: 'Nombres',
 		cell: ({ row }) => {
-    const posicion = Number(row.getValue('posicion'));
-    // Si está entre los 3 primeros, le damos font-black
-    const isTop3 = posicion <= 3; 
-    return (
-        <div className={cn('font-medium', isTop3 && 'font-bold tracking-wide animate-[pulse_2s_ease-in-out_infinite_1s]')}>
-            {row.getValue('nombre')}
-        </div>
-    )
-}
+			const posicion = Number(row.getValue('posicion'));
+			const posicionAnterior = Number(row.original.fechaAnterior);
+			const diferencia =
+				!posicionAnterior || posicionAnterior <= 0
+					? null
+					: posicionAnterior - posicion
+			// positiva = subió
+			// negativa = bajó
+			const movement =
+				diferencia === null ? null : diferencia > 0 ? (
+					<div className="flex items-center gap-0.5 text-green-500 text-[8px] font-bold">
+						<ChevronUp className="h-3 w-3" />
+						{diferencia}
+					</div>
+				) : diferencia < 0 ? (
+					<div className="flex items-center gap-0.5 text-red-500 text-[8px] font-bold">
+						<ChevronDown className="h-3 w-3" />
+						{Math.abs(diferencia)}
+					</div>
+				) : null
+
+			// Si está entre los 3 primeros, le damos font-black
+			const isTop3 = posicion <= 3;
+			return (
+				<div className="flex items-center gap-2">
+					<span className="animate-[pulse_2.5s_ease-in-out_infinite_1s]">
+						{movement}
+					</span>
+					<div className={cn('font-medium', isTop3 && 'font-bold tracking-wide **animate-[pulse_2s_ease-in-out_infinite_1s]')}>
+						{row.getValue('nombre')}
+					</div>
+				</div>
+			)
+		}
 	},
 	{
 		accessorKey: 'puntos',
