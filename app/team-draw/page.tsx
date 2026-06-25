@@ -63,7 +63,7 @@ const players: Player[] = [
 		nombre: 'Jhon Guzman', puntos: 15 },
 
 	{ id: 16, equipo: 'blanco',
-		nombre: 'Referido Walter', puntos: 0 },
+		nombre: 'Brayan Álvarez', puntos: 0 },
 ]
 
 export default function SorteoPage() {
