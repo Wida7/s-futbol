@@ -94,7 +94,7 @@ export default function InformationPage() {
                 <CheckCircle2 size={28} />
               </div>
               <h3 className="text-2xl font-black uppercase text-white mb-2">Asistencia</h3>
-              <div className="text-5xl font-black text-green-400 mb-4 drop-shadow-[0_0_10px_rgba(34,197,94,0.4)]">+10 <span className="text-xl text-zinc-500 font-bold uppercase tracking-wider">pts</span></div>
+              <div className="text-5xl font-black text-green-400 mb-4 drop-shadow-[0_0_10px_rgba(34,197,94,0.4)]">+6 <span className="text-xl text-zinc-500 font-bold uppercase tracking-wider">pts</span></div>
               <p className="text-base text-zinc-400 leading-relaxed">
                 Solo por llegar a la cancha y jugar el partido. El premio más importante a la constancia.
               </p>
@@ -109,7 +109,7 @@ export default function InformationPage() {
                 <Trophy size={28} />
               </div>
               <h3 className="text-2xl font-black uppercase text-white mb-2">Victoria</h3>
-              <div className="text-5xl font-black text-yellow-400 mb-4 drop-shadow-[0_0_10px_rgba(234,179,8,0.4)]">+5 <span className="text-xl text-zinc-500 font-bold uppercase tracking-wider">pts</span></div>
+              <div className="text-5xl font-black text-yellow-400 mb-4 drop-shadow-[0_0_10px_rgba(234,179,8,0.4)]">+3 <span className="text-xl text-zinc-500 font-bold uppercase tracking-wider">pts</span></div>
               <p className="text-base text-zinc-400 leading-relaxed">
                 Puntos adicionales para los miembros del equipo que resulte ganador en cada fecha.
               </p>
@@ -124,7 +124,7 @@ export default function InformationPage() {
                 <Equal size={28} />
               </div>
               <h3 className="text-2xl font-black uppercase text-white mb-2">Empate</h3>
-              <div className="text-5xl font-black text-blue-400 mb-4 drop-shadow-[0_0_10px_rgba(59,130,246,0.4)]">+3 <span className="text-xl text-zinc-500 font-bold uppercase tracking-wider">pts</span></div>
+              <div className="text-5xl font-black text-blue-400 mb-4 drop-shadow-[0_0_10px_rgba(59,130,246,0.4)]">+1 <span className="text-xl text-zinc-500 font-bold uppercase tracking-wider">pts</span></div>
               <p className="text-base text-zinc-400 leading-relaxed">
                 Si el partido termina igualado, ambos equipos suman este punto extra (además de la asistencia).
               </p>
@@ -141,7 +141,7 @@ export default function InformationPage() {
               <h3 className="text-2xl font-black uppercase text-white mb-2">Referidos</h3>
               <div className="text-5xl font-black text-purple-400 mb-4 drop-shadow-[0_0_10px_rgba(168,85,247,0.4)]">+2 <span className="text-xl text-zinc-500 font-bold uppercase tracking-wider">pts c/u</span></div>
               <p className="text-base text-zinc-400 leading-relaxed">
-                Por cada invitado tuyo que asista a jugar. Hasta un máximo de 3 referidos por partido.
+                Por cada invitado tuyo que asista a jugar. Hasta un máximo de 2 referidos por partido.
               </p>
             </div>
 
@@ -186,28 +186,15 @@ export default function InformationPage() {
                 MVP
               </h3>
 
-              {/* Estado */}
-              <div className="text-xl font-black text-yellow-400 mb-4 drop-shadow-[0_0_10px_rgba(234,179,8,0.4)]">
-                PRÓXIMAMENTE
+              {/* Puntos */}
+              <div className="text-5xl font-black text-yellow-400 mb-4 drop-shadow-[0_0_10px_rgba(34,197,94,0.4)]">
+                +2 <span className="text-xl text-zinc-500 font-bold uppercase tracking-wider">pts</span>
               </div>
 
               {/* Descripción */}
               <p className="text-base text-zinc-400 leading-relaxed">
-                También se premiará el talento individual,
-
-                <RoughNotation
-                  type="box"
-                  show={show}
-                  color="rgba(0,155,0,0.4)"
-                  animationDuration={4000}
-                  iterations={3}
-                >
-                  <span className="px-0.5"> PERO </span>
-                </RoughNotation>
-
-
-
-                con el voto de tu equipo.
+                También se premiará el talento individual, con el voto de los participantes.
+                (No podrá ser seguido, osea de una fecha a la siguiente no podrá ser el mismo jugador)
               </p>
             </div>
 
@@ -248,16 +235,15 @@ export default function InformationPage() {
 
             <p className="mt-5 text-zinc-400 text-lg max-w-2xl mx-auto md:mx-0">
               <RoughNotation
-              type="underline"
+              type="box"
               show={show}
               color="red"
               animationDuration={3000}
               iterations={3}
             >
               <span className=''>
-              Las imagenes son de referencia
+              También premiaremos a los que asistan a todos los partidos de la edición, se merecen un reconocimiento especial 😎
               </span></RoughNotation>
-              , pueden variar según disponinibilidad, al acercarse la última fecha se anunciarán los premios específicos de esta edición
             </p>
             
           </div>
@@ -277,11 +263,11 @@ export default function InformationPage() {
                 </p>
 
                 <div className="text-2xl sm:text-3xl font-black text-zinc-100">
-                  $70K
-                </div> ó
+                  $100K
+                </div> {/* ó
                 <div className="mt-3">
                   <Image src="/dos.png" alt="Premio alternativo 2do lugar" width={72} height={72} className="mx-auto rounded-2xl border border-zinc-700/40 bg-white/15" />
-                </div>
+                </div> */}
               </div>
 
               <div className="relative h-32 w-20 sm:h-44 sm:w-36 rounded-t-2xl sm:rounded-t-3xl border border-zinc-400/30 bg-linear-to-b from-zinc-300/30 to-zinc-900/80 backdrop-blur-xl flex items-center justify-center overflow-hidden">
@@ -317,11 +303,11 @@ export default function InformationPage() {
                 </p>
 
                 <div className="text-3xl sm:text-5xl font-black bg-linear-to-b from-yellow-200 to-yellow-500 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">
-                  $100K
-                </div> ó
+                  $130K
+                </div> y Trofeo {/* ó
                 <div className="mt-3">
                   <Image src="/uno.png" alt="Premio alternativo campeón" width={84} height={84} className="mx-auto rounded-2xl border border-yellow-400/30 bg-yellow-950/20" />
-                </div>
+                </div> */}
               </div>
 
               <div className="relative h-44 w-24 sm:h-60 sm:w-40 rounded-t-2xl sm:rounded-t-3xl border border-yellow-400/40 bg-linear-to-b from-yellow-400/30 to-yellow-950/80 backdrop-blur-xl flex items-center justify-center overflow-hidden">
@@ -352,11 +338,11 @@ export default function InformationPage() {
                 </p>
 
                 <div className="text-2xl sm:text-3xl font-black text-amber-400">
-                  $50K
-                </div> ó
+                  $70K
+                </div> {/* ó
                 <div className="mt-3">
                   <Image src="/tres.png" alt="Premio alternativo 3er lugar" width={64} height={64} className="mx-auto rounded-2xl border border-amber-500/30 bg-amber-950/20" />
-                </div>
+                </div> */}
               </div>
 
               <div className="relative h-24 w-20 sm:h-32 sm:w-36 rounded-t-2xl sm:rounded-t-3xl border border-amber-700/30 bg-linear-to-b from-amber-700/30 to-zinc-950/80 backdrop-blur-xl flex items-center justify-center">

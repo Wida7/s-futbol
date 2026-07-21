@@ -8,7 +8,8 @@ import { ToastProvider } from "@/components/toast"
 
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
-const tema = "poseidon"
+//const tema = "poseidon"
+const tema = "ares"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

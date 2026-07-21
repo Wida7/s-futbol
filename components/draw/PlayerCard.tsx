@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react'
 import { Shirt } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 interface Player {
 	id: number
@@ -13,11 +14,17 @@ interface Player {
 interface Props {
 	player: Player
 	featured?: boolean
+	onClick?: () => void
+	disabled?: boolean
+	selected?: boolean
 }
 
 export function PlayerCard({
 	player,
 	featured,
+	onClick,
+	disabled,
+	selected
 }: Props) {
 
 	const isWhite = player.equipo === 'blanco'
@@ -25,7 +32,7 @@ export function PlayerCard({
 	return (
 		<motion.div
 			whileHover={{ scale: 1.03 }}
-			className={`
+			className={cn(`
 				relative overflow-hidden border backdrop-blur-2xl gap-4 
 
 				${featured
@@ -37,7 +44,9 @@ export function PlayerCard({
 					? 'border-white/30! bg-white/10 shadow-[0_0_25px_rgba(255,255,255,0.15)]'
 					: 'border-zinc-700! bg-black/70 shadow-[0_0_25px_rgba(0,0,0,0.8)]'
 				}
-			`}
+			`, disabled && "opacity-20 grayscale cursor-not-allowed ",
+        selected && "ring-4 ring-yellow-400")}
+			onClick={!disabled ? onClick : undefined}
 		>
 
 			{/* SHINE */}
@@ -87,11 +96,11 @@ export function PlayerCard({
 						}`}>
 
 						{featured
-						? `${player.puntos} puntos`
-						: `${player.puntos} pts`}
+							? `${player.puntos} puntos`
+							: `${player.puntos} pts`}
 
 
-						
+
 					</div>
 				</div>
 
