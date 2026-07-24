@@ -9,7 +9,7 @@ export const tittle = "SORTEO - FECHA FINAL"
 
 export const players: Player[] = [
 	{ id: 1, equipo: 'blanco',
-		nombre: 'Camilo Rincon', puntos: 0 },
+		nombre: 'Danny Martínez', puntos: 0 },
 
 	{ id: 2, equipo: 'negro',
 		nombre: 'Walter Gomez', puntos: 0 },
