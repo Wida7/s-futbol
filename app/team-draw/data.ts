@@ -33,7 +33,7 @@ export const players: Player[] = [
 		nombre: 'Jeisson Linares', puntos: 0 },
 
 	{ id: 9, equipo: 'blanco',
-		nombre: 'Cupo disponible', puntos: 0 },
+		nombre: 'Armando Ortega', puntos: 0 },
 
 	{ id: 10, equipo: 'negro',
 		nombre: 'David Villarreal', puntos: 0 },
