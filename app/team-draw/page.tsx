@@ -2,13 +2,11 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { players, Player } from "./data"
+import { players, Player, tittle } from "./data"
 import { Trophy } from 'lucide-react'
 import { FieldBackground } from '@/components/draw/FieldBackground'
 import { PlayerCard } from '@/components/draw/PlayerCard'
 
-
-const tittle = "SORTEO - FECHA FINAL"
 
 
 export default function SorteoPage() {
