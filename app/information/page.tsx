@@ -194,7 +194,7 @@ export default function InformationPage() {
               {/* Descripción */}
               <p className="text-base text-zinc-400 leading-relaxed">
                 También se premiará el talento individual, con el voto de los participantes.
-                (No podrá ser seguido, osea de una fecha a la siguiente no podrá ser el mismo jugador)
+                (En una edición no se podrá ser MVP más de una vez, para que más jugadores tengan la oportunidad de ganar este premio)
               </p>
             </div>
 
