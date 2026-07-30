@@ -11,7 +11,7 @@ export const tittle = "SORTEO - SEGUNDA FECHA"
 
 export const players: Player[] = [
 	{ id: 1, equipo: 'negro',
-		nombre: 'Javier', puntos: 0 },
+		nombre: 'Alexander Rodriguez', puntos: 0 },
 
 	{ id: 2, equipo: 'blanco',
 		nombre: 'Keny Quemba', puntos: 11 },
@@ -32,7 +32,7 @@ export const players: Player[] = [
 		nombre: 'Jean Ramos', puntos: 7 },
 
 	{ id: 8, equipo: 'blanco',
-		nombre: 'Alexander Rodriguez', puntos: 0 },
+		nombre: 'Javier', puntos: 0 },
 
 	{ id: 9, equipo: 'negro',
 		nombre: 'Daniel Saavedra', puntos: 7 },
