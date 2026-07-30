@@ -6,9 +6,9 @@ import { RoughNotation } from 'react-rough-notation'
 import { FieldBackground } from '@/components/draw/FieldBackground'
 import { PlayerCard } from '@/components/draw/PlayerCard'
 import { players, Player } from '../team-draw/data'
+import { MATCH_ID } from '../team-draw/data'
 
 
-const MATCH_ID = 'fecha-1'
 const title = `VOTACIÓN MVP * ${MATCH_ID}`
 
 type Step = 'voter' | 'mvp' | 'sending' | 'done'
@@ -325,7 +325,8 @@ function Formation({
               onClick={() => onPlayerClick(player)}
               disabled={
                 step === 'mvp' &&
-                player.id === voter?.id
+                player.id === voter?.id ||
+                player.mvp
               }
               selected={
                 player.id === voter?.id ||

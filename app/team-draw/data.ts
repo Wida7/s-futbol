@@ -3,56 +3,58 @@ export interface Player {
 	nombre: string
 	equipo: 'blanco' | 'negro',
 	puntos: number
+	mvp?: boolean
 }
 
-export const tittle = "SORTEO - FECHA FINAL"
+export const MATCH_ID = 'fecha-2'
+export const tittle = "SORTEO - SEGUNDA FECHA"
 
 export const players: Player[] = [
-	{ id: 1, equipo: 'blanco',
-		nombre: 'Danny Martínez', puntos: 0 },
+	{ id: 1, equipo: 'negro',
+		nombre: 'Javier', puntos: 0 },
 
-	{ id: 2, equipo: 'negro',
-		nombre: 'Walter Gomez', puntos: 0 },
+	{ id: 2, equipo: 'blanco',
+		nombre: 'Keny Quemba', puntos: 11 },
 
-	{ id: 3, equipo: 'blanco',
-		nombre: 'Jhon Guzman', puntos: 0 },
+	{ id: 3, equipo: 'negro',
+		nombre: 'Walter Gomez', puntos: 7 },
 
-	{ id: 4, equipo: 'negro',
-		nombre: 'Daniel Saavedra', puntos: 0 },
+	{ id: 4, equipo: 'blanco',
+		nombre: 'Alejandro Colmenares', puntos: 11 },
+		
+	{ id: 5, equipo: 'negro',
+		nombre: 'Nicolás Chacón', puntos: 0 },
 
-	{ id: 5, equipo: 'blanco',
-		nombre: 'Jean Ramos', puntos: 0 },
+	{ id: 6, equipo: 'blanco',
+		nombre: 'Jhankarlo Gómez ⭐', puntos: 10, mvp: true },
 
-	{ id: 6, equipo: 'negro',
-		nombre: 'José Martinez', puntos: 0 },
+	{ id: 7, equipo: 'negro',
+		nombre: 'Jean Ramos', puntos: 7 },
 
-	{ id: 7, equipo: 'blanco',
-		nombre: 'Keny Kemba', puntos: 0 },
+	{ id: 8, equipo: 'blanco',
+		nombre: 'Alexander Rodriguez', puntos: 0 },
 
-	{ id: 8, equipo: 'negro',
-		nombre: 'Jeisson Linares', puntos: 0 },
+	{ id: 9, equipo: 'negro',
+		nombre: 'Daniel Saavedra', puntos: 7 },
 
-	{ id: 9, equipo: 'blanco',
-		nombre: 'Armando Ortega', puntos: 0 },
+	{ id: 10, equipo: 'blanco',
+		nombre: 'Alex Quiroga', puntos: 0 },
 
-	{ id: 10, equipo: 'negro',
-		nombre: 'David Villarreal', puntos: 0 },
+	{ id: 11, equipo: 'negro',
+		nombre: 'Mauricio Pulido', puntos: 9 },
 
-	{ id: 11, equipo: 'blanco',
-		nombre: 'Edwin Miranda', puntos: 0 },
+	{ id: 12, equipo: 'blanco',
+		nombre: 'Andrés Gómez', puntos: 7 },
 
-	{ id: 12, equipo: 'negro',
-		nombre: 'Mauricio Pulido', puntos: 0 },
+	{ id: 13, equipo: 'negro',
+		nombre: 'Reinel Capera', puntos: 0 },
 
-	{ id: 13, equipo: 'blanco',
-		nombre: 'Jorge Hernández', puntos: 0 },
+	{ id: 14, equipo: 'blanco',
+		nombre: 'Jeisson Linares', puntos: 7 },
 
-	{ id: 14, equipo: 'negro',
-		nombre: 'Alejandro Colmenares', puntos: 0 },
+	{ id: 15, equipo: 'negro',
+		nombre: 'Fabio Garcia', puntos: 9 },
 
-	{ id: 15, equipo: 'blanco',		
-		nombre: 'Fabio Garcia', puntos: 0 },
-
-	{ id: 16, equipo: 'negro',
-		nombre: 'Deison Cagua', puntos: 0 },
+	{ id: 16, equipo: 'blanco',
+		nombre: 'Jhon Guzman', puntos: 7 },
 ]
