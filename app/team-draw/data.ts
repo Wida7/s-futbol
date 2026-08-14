@@ -20,7 +20,7 @@ export const players: Player[] = [
 		nombre: 'David Villarreal', puntos: 18 },
 
 	{ id: 4, equipo: 'blanco', 
-		nombre: 'Fabio Garcia', puntos: 17 },
+		nombre: 'Jhankarlo Gómez⭐', puntos: 10 },
 
 	{ id: 5, equipo: 'negro', 
 		nombre: 'Freddy', puntos: 0 },
@@ -53,8 +53,8 @@ export const players: Player[] = [
 		nombre: 'Walter Gomez', puntos: 16 },
 
 	{ id: 15, equipo: 'negro', 
-		nombre: 'CUPO DISPONIBLE', puntos: 0 },
+		nombre: 'Andrés Gómez', puntos: 15 },
 
 	{ id: 16, equipo: 'blanco', 
-		nombre: 'CUPO DISPONIBLE', puntos: 0 },
+		nombre: 'Alex Quiroga', puntos: 6 },
 ]
