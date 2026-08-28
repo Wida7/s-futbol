@@ -325,8 +325,10 @@ function Formation({
               onClick={() => onPlayerClick(player)}
               disabled={
                 step === 'mvp' &&
-                player.id === voter?.id ||
-                player.mvp
+                (
+                  player.id === voter?.id ||
+                  player.mvp
+                )
               }
               selected={
                 player.id === voter?.id ||

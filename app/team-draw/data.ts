@@ -6,55 +6,55 @@ export interface Player {
 	mvp?: boolean
 }
 
-export const MATCH_ID = 'fecha-3'
-export const tittle = "SORTEO - TERCERA FECHA"
+export const MATCH_ID = 'fecha-4'
+export const tittle = "SORTEO - CUARTA FECHA"
 
 export const players: Player[] = [
 	{ id: 1, equipo: 'negro', 
-		nombre: 'Mauricio Pulido⭐', puntos: 21, mvp: true },
+		nombre: 'Don Julio', puntos: 9 },
 
 	{ id: 2, equipo: 'blanco', 
-		nombre: 'Sebastian Patiño', puntos: 0 },
+		nombre: 'Mauricio Pulido⭐', puntos: 30, mvp: true },
 
 	{ id: 3, equipo: 'negro', 
-		nombre: 'David Villarreal', puntos: 18 },
+		nombre: 'Camilo Camargo', puntos: 0 },
 
 	{ id: 4, equipo: 'blanco', 
-		nombre: 'Jhankarlo Gómez⭐', puntos: 10 },
+		nombre: 'Jean Ramos', puntos: 28 },
 
 	{ id: 5, equipo: 'negro', 
-		nombre: 'Freddy', puntos: 0 },
+		nombre: 'Andrés Gómez', puntos: 26 },
 
 	{ id: 6, equipo: 'blanco', 
-		nombre: 'Jean Ramos', puntos: 16 },
+		nombre: 'Ricardo', puntos: 0 },
 
 	{ id: 7, equipo: 'negro', 
-		nombre: 'Juan David', puntos: 0 },
+		nombre: 'Keny Quemba⭐', puntos: 34, mvp: true },
 
 	{ id: 8, equipo: 'blanco', 
-		nombre: 'Keny Quemba', puntos: 19 },
+		nombre: 'Freddy', puntos: 6 },
 
 	{ id: 9, equipo: 'negro', 
-		nombre: 'Jhon Guzman', puntos: 13 },
+		nombre: 'Fabio Garcia', puntos: 12 },
 
 	{ id: 10, equipo: 'blanco', 
-		nombre: 'Daniel Saavedra', puntos: 16 },
+		nombre: 'Jhon Guzman', puntos: 22 },
 
 	{ id: 11, equipo: 'negro', 
-		nombre: 'Alejandro Colmenares', puntos: 12 },
+		nombre: 'Alex Quiroga', puntos: 15 },
 
 	{ id: 12, equipo: 'blanco', 
-		nombre: 'Gabriel Arias', puntos: 0 },
+		nombre: 'Jeisson Linares', puntos: 22 },
 
 	{ id: 13, equipo: 'negro', 
-		nombre: 'Jeisson Linares', puntos: 13 },
+		nombre: 'Juan David', puntos: 8 },
 
 	{ id: 14, equipo: 'blanco', 
-		nombre: 'Walter Gomez', puntos: 16 },
+		nombre: 'Alexander Rodriguez', puntos: 11 },
 
 	{ id: 15, equipo: 'negro', 
-		nombre: 'Andrés Gómez', puntos: 15 },
+		nombre: 'Camilo Rincon', puntos: 0 },
 
 	{ id: 16, equipo: 'blanco', 
-		nombre: 'Alex Quiroga', puntos: 6 },
+		nombre: 'Andrés Zapata', puntos: 0 },
 ]
