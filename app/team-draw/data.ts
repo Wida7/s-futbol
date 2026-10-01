@@ -3,58 +3,59 @@ export interface Player {
 	nombre: string
 	equipo: 'blanco' | 'negro',
 	puntos: number
+	valoracion?: any
 	mvp?: boolean
 }
 
-export const MATCH_ID = 'fecha-5'
-export const tittle = "SORTEO - QUINTA FECHA"
+export const MATCH_ID = 'fecha-1'
+export const tittle = "SORTEO - PRIMER FECHA"
 
 export const players: Player[] = [
-	{ id: 3, equipo: 'negro', 
-		nombre: 'Camilo Rincon', puntos: 8 },
+	{ id: 1, equipo: 'blanco',
+		nombre: 'Jean Ramos', valoracion: 9.7, puntos: 0, mvp: true },
 
-	{ id: 4, equipo: 'blanco', 
-		nombre: 'Jean Ramos', puntos: 40, mvp: true },
+	{ id: 2, equipo: 'negro',
+		nombre: 'Wilson Fierro', valoracion: 7.0, puntos: 0 },
 
-	{ id: 5, equipo: 'negro', 
-		nombre: 'Jhon Guzman', puntos: 31 },
+	{ id: 3, equipo: 'blanco',
+		nombre: 'Camilo Rincón', valoracion: 8.2, puntos: 0 },
 
-	{ id: 6, equipo: 'blanco', 
-		nombre: 'Andrés Gómez', puntos: 32 },
+	{ id: 4, equipo: 'negro',
+		nombre: 'Sebastián Patiño', valoracion: 7.2, puntos: 0 },
 
-	{ id: 7, equipo: 'negro', 
-		nombre: 'Daniel Saavedra', puntos: 16 },
+	{ id: 5, equipo: 'blanco',
+		nombre: 'Camilo Camargo', valoracion: 7.8, puntos: 0, mvp: true },
 
-	{ id: 8, equipo: 'blanco', 
-		nombre: 'Sebastian Patiño', puntos: 14 },
+	{ id: 6, equipo: 'negro',
+		nombre: 'Jhon Guzman', valoracion: 7.0, puntos: 0 },
 
-	{ id: 9, equipo: 'negro', 
-		nombre: 'Ricardo', puntos: 6 },
+	{ id: 7, equipo: 'blanco',
+		nombre: 'Reinel Capera', valoracion: 7.3, puntos: 0 },
 
-	{ id: 10, equipo: 'blanco', 
-		nombre: 'Jeisson Linares', puntos: 25 },
+	{ id: 8, equipo: 'negro',
+		nombre: 'Mauricio Amaya', valoracion: 7.0, puntos: 0 },
 
-	{ id: 11, equipo: 'negro', 
-		nombre: 'Juan David', puntos: 14 },
+	{ id: 9, equipo: 'blanco',
+		nombre: 'Freddy', valoracion: 6.0, puntos: 0 },
 
-	{ id: 12, equipo: 'blanco', 
-		nombre: 'Camilo Camargo', puntos: 6 },
+	{ id: 10, equipo: 'negro',
+		nombre: 'Jeisson Linares', valoracion: 6.8, puntos: 0 },
 
-	{ id: 13, equipo: 'negro', 
-		nombre: 'Keny Quemba', puntos: 40, mvp: true },		
+	{ id: 11, equipo: 'blanco',
+		nombre: 'Andrés Zapata', valoracion: 5.3, puntos: 0 },
 
-	{ id: 14, equipo: 'blanco', 
-		nombre: 'Freddy', puntos: 15 },
+	{ id: 12, equipo: 'negro',
+		nombre: 'Keny Quemba', valoracion: 6.5, puntos: 0, mvp: true },
 
-	{ id: 15, equipo: 'negro', 
-		nombre: 'Jefferson Linares', puntos: 8 },
+	{ id: 13, equipo: 'blanco',
+		nombre: 'Alexander Rodriguez', valoracion: 4.8, puntos: 0 },
 
-	{ id: 16, equipo: 'blanco', 
-		nombre: 'Andrés Zapata', puntos: 9 },
+	{ id: 14, equipo: 'negro',
+		nombre: 'Andrés Gómez', valoracion: 5.0, puntos: 0 },
 
-	{ id: 17, equipo: 'negro', 
-		nombre: 'Wilson Fierro', puntos: 0 },
+	{ id: 15, equipo: 'blanco',
+		nombre: 'Alex Quiroga', valoracion: 4.5, puntos: 0 },
 
-	{ id: 18, equipo: 'blanco', 
-		nombre: 'Alexander Rodriguez', puntos: 22 },
+	{ id: 16, equipo: 'negro',
+		nombre: 'Alejandro Colmenares', valoracion: 4.2, puntos: 0 },
 ]
