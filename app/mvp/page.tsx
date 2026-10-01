@@ -35,7 +35,7 @@ export default function MvpPage() {
     const interval = setInterval(() => {
       setShow(false);
       setTimeout(() => setShow(true), 100); // reinicia
-    }, 5000); // cada 4 segundos
+    }, 4000); // cada 4 segundos
     return () => clearInterval(interval);
   }, []);
 
@@ -58,6 +58,22 @@ export default function MvpPage() {
       document.removeEventListener('touchstart', handleClickOutside)
     }
   }, [showTopDropdown])
+
+  function resetVoting() {
+    setVoter(null)
+    setMvp(null)
+    setError('')
+    setStep('voter')
+  }
+
+  useEffect(() => {
+    if (step === 'done') {
+      const timer = setTimeout(() => {
+        resetVoting()
+      }, 3000)
+      return () => clearTimeout(timer)
+    }
+  }, [step])
 
 
 
@@ -87,12 +103,21 @@ export default function MvpPage() {
     })
 
     if (!response.ok) {
-      throw new Error('Error al guardar el voto')
+      const data = await response.json().catch(() => null)
+      throw new Error(data?.message || 'Error al guardar el voto')
     }
   }
 
   async function handlePlayerClick(player: Player) {
-    if (step === 'sending' || step === 'done') return
+    if (step === 'sending') return
+
+    if (step === 'done') {
+      setError('')
+      setMvp(null)
+      setVoter(player)
+      setStep('mvp')
+      return
+    }
 
     if (step === 'voter') {
       setVoter(player)
@@ -110,10 +135,12 @@ export default function MvpPage() {
       try {
         await saveVote(voter!, player)
         setStep('done')
-      } catch (err) {
+      } catch (err: unknown) {
         console.error(err)
-        setError('Ocurrió un error registrando tu voto.')
-        setStep('mvp')
+        const msg = err instanceof Error ? err.message : 'Ocurrió un error registrando tu voto.'
+        setError(msg)
+        setStep('voter')
+        setVoter(null)
         setMvp(null)
       } finally {
         await loadLeader()
@@ -293,13 +320,17 @@ export default function MvpPage() {
                       ¿Quién fue el mejor jugador?
                     </h2>
                   </RoughNotation>
-                  {/* <p className="mt-2 text-white/70">
-                                        No puedes votar por ti mismo.
-                                    </p>
 
-                                    <p className="mt-3 text-green-400 font-semibold">
-                                        Tú eres: {voter?.nombre}
-                                    </p> */}
+                  <div className="mt-1 flex items-center gap-2 text-xs text-white/80">
+                    <span>Votando como: <strong className="text-white">{voter?.nombre}</strong></span>
+                    <button
+                      type="button"
+                      onClick={resetVoting}
+                      className="text-yellow-400 hover:underline text-[11px] cursor-pointer"
+                    >
+                      (Cambiar)
+                    </button>
+                  </div>
                 </>
               )}
 
@@ -314,13 +345,21 @@ export default function MvpPage() {
               )}
 
               {step === 'done' && (
-                <div className="flex flex-col items-center gap-0.5">
-
+                <div className="flex flex-col items-center gap-1.5 animate-in fade-in duration-200">
                   <CheckCircle2 className="w-7 h-7 text-green-400" />
 
-                  <h2 className="text-[18px] bg-linear-to-b from-white to-white/60 bg-clip-text  sm:text-2xl font-black uppercase tracking-[0.15em] text-transparent text-center">
+                  <h2 className="text-[18px] bg-linear-to-b from-white to-white/60 bg-clip-text sm:text-2xl font-black uppercase tracking-[0.15em] text-transparent text-center">
                     ¡Gracias por votar!
                   </h2>
+
+                  <button
+                    type="button"
+                    onClick={resetVoting}
+                    className="mt-1 flex items-center gap-1.5 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 px-3.5 py-1 text-xs text-white/90 border border-white/20 transition cursor-pointer"
+                  >
+                    <RefreshCcw className="w-3.5 h-3.5" />
+                    <span>Votar con otro jugador</span>
+                  </button>
                 </div>
               )}
 
