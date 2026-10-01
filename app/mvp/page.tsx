@@ -1,7 +1,7 @@
 'use client'
 
-import { useMemo, useState, useEffect } from 'react'
-import { CheckCircle2, Loader2, RefreshCcw } from 'lucide-react'
+import { useMemo, useState, useEffect, useRef } from 'react'
+import { CheckCircle2, ChevronDown, Loader2, RefreshCcw } from 'lucide-react'
 import { RoughNotation } from 'react-rough-notation'
 import { FieldBackground } from '@/components/draw/FieldBackground'
 import { PlayerCard } from '@/components/draw/PlayerCard'
@@ -13,6 +13,12 @@ const title = `VOTACIÓN MVP * ${MATCH_ID}`
 
 type Step = 'voter' | 'mvp' | 'sending' | 'done'
 
+interface RankedPlayer {
+  playerId: number
+  playerName: string
+  votes: number
+}
+
 export default function MvpPage() {
   const [step, setStep] = useState<Step>('voter')
   const [voter, setVoter] = useState<Player | null>(null)
@@ -20,11 +26,10 @@ export default function MvpPage() {
   const [error, setError] = useState('')
   const [show, setShow] = useState(true)
   const [loadingLeader, setLoadingLeader] = useState(false)
-  const [leader, setLeader] = useState<{
-    playerId: number
-    playerName: string
-    votes: number
-  } | null>(null)
+  const [leader, setLeader] = useState<RankedPlayer | null>(null)
+  const [topPlayers, setTopPlayers] = useState<RankedPlayer[]>([])
+  const [showTopDropdown, setShowTopDropdown] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,6 +42,22 @@ export default function MvpPage() {
   useEffect(() => {
     loadLeader()
   }, [])
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent | TouchEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowTopDropdown(false)
+      }
+    }
+    if (showTopDropdown) {
+      document.addEventListener('mousedown', handleClickOutside)
+      document.addEventListener('touchstart', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [showTopDropdown])
 
 
 
@@ -110,9 +131,10 @@ export default function MvpPage() {
         throw new Error()
       }
 
-      const ranking = await response.json()
+      const ranking: RankedPlayer[] = await response.json()
 
       setLeader(ranking.length ? ranking[0] : null)
+      setTopPlayers(ranking.slice(0, 3))
 
     } catch (error) {
       console.error(error)
@@ -138,29 +160,81 @@ export default function MvpPage() {
           </h1>
 
           {/* Mvp */}
-          <div className="flex justify-center gap-3">
+          <div className="flex justify-center gap-3 items-center">
 
             {leader ? (
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (topPlayers.length > 1) {
+                      setShowTopDropdown(prev => !prev)
+                    }
+                  }}
+                  className={`rounded-full bg-white/10 px-3 py-0.5 text-sm flex items-center transition select-none ${
+                    topPlayers.length > 1
+                      ? 'cursor-pointer hover:bg-white/20 active:scale-95'
+                      : 'cursor-default'
+                  }`}
+                  aria-expanded={showTopDropdown}
+                  aria-haspopup={topPlayers.length > 1}
+                >
+                  <span>🔥 {leader.playerName}</span>
+                  <span className="ml-2 text-yellow-400 font-bold">
+                    {leader.votes} {leader.votes === 1 ? 'Voto' : 'Votos'}
+                  </span>
+                  {topPlayers.length > 1 && (
+                    <ChevronDown
+                      className={`ml-1.5 h-3.5 w-3.5 transition-transform duration-200 ${
+                        showTopDropdown ? 'rotate-180 text-yellow-400' : 'text-white/70'
+                      }`}
+                    />
+                  )}
+                </button>
 
-              <div className="rounded-full bg-white/10 px-3 py-0.5 text-sm">
+                {topPlayers.length > 1 && showTopDropdown && (
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 rounded-xl border border-white/20 bg-[#07170e]/95 backdrop-blur-md shadow-2xl p-2 z-50 animate-in fade-in zoom-in-95 duration-150">
+                    <div className="px-2 py-1 text-[11px] font-semibold tracking-wider uppercase text-white/50 border-b border-white/10 mb-1 flex items-center justify-between">
+                      <span>Top 3 Más Votados</span>
+                      <span className="text-[10px] text-white/40">MVP</span>
+                    </div>
 
-                🔥 {leader.playerName}
-
-                <span className="ml-2 text-yellow-400 font-bold">
-                  {leader.votes} Votos
-                </span>
-
+                    <div className="flex flex-col gap-1">
+                      {topPlayers.map((player, index) => {
+                        const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : '🥉'
+                        const isFirst = index === 0
+                        return (
+                          <div
+                            key={player.playerId}
+                            className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-xs ${
+                              isFirst
+                                ? 'bg-white/15 text-white font-medium shadow-xs'
+                                : 'bg-white/5 text-white/90'
+                            }`}
+                          >
+                            <div className="flex items-center gap-1.5 min-w-0">
+                              <span className="text-sm shrink-0">{medal}</span>
+                              <span className="truncate">{player.playerName}</span>
+                            </div>
+                            <span className="text-yellow-400 font-bold ml-2 shrink-0">
+                              {player.votes} {player.votes === 1 ? 'Voto' : 'Votos'}
+                            </span>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
-
             ) : (
-
               <></>
-
             )}
+
             <button
               onClick={loadLeader}
               disabled={loadingLeader}
               className="rounded-full bg-white/10 px-3 py-0.5 hover:bg-white/20 transition border-2 animate-pulse"
+              title="Recargar líder"
             >
               {loadingLeader ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
